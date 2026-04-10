@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkrhxmgvx3in6"]
+
+[ext_resource type="Script" uid="uid://jonrqej4f0dc" path="res://map_renderer.gd" id="1_35ej1"]
+[ext_resource type="Script" uid="uid://drnxalu8raosx" path="res://camera_2d.gd" id="2_6583d"]
+
+[node name="MapRenderer" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_35ej1")
+
+[node name="TerrainLayer" type="TileMapLayer" parent="."]
+
+[node name="ShadowLayer" type="TileMapLayer" parent="."]
+
+[node name="DetailLayer" type="TileMapLayer" parent="."]
+
+[node name="WaterLayer" type="TileMapLayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_6583d")

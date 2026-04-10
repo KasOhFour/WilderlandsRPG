@@ -1,0 +1,48 @@
+class_name Directions
+
+const NORTH := Vector2i(0, -1)
+const NORTHEAST := Vector2i(1, -1)
+const EAST := Vector2i(1, 0)
+const SOUTHEAST := Vector2i(1, 1)
+const SOUTH := Vector2i(0, 1)
+const SOUTHWEST := Vector2i(-1, 1)
+const WEST := Vector2i(-1, 0)
+const NORTHWEST := Vector2i(-1, -1)
+const CARDINAL := [
+	NORTH,
+	EAST,
+	SOUTH,
+	WEST,
+]
+const DIAGONAL := [
+	NORTHEAST,
+	SOUTHEAST,
+	SOUTHWEST,
+	NORTHWEST,
+]
+const ADJACENT := [
+	NORTH,
+	NORTHEAST,
+	EAST,
+	SOUTHEAST,
+	SOUTH,
+	SOUTHWEST,
+	WEST,
+	NORTHWEST,
+]
+const OPPOSITE := {
+	NORTH: SOUTH,
+	NORTHEAST: SOUTHWEST,
+	EAST: WEST,
+	SOUTHEAST: NORTHWEST,
+	SOUTH: NORTH,
+	SOUTHWEST: NORTHEAST,
+	WEST: EAST,
+	NORTHWEST: SOUTHEAST,
+}
+const GUARD := {
+	NORTHEAST: [NORTH, EAST],
+	SOUTHEAST: [EAST, SOUTH],
+	SOUTHWEST: [SOUTH, WEST],
+	NORTHWEST: [NORTH, WEST],
+}

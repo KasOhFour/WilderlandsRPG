@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WfcTileData" load_steps=2 format=3 uid="uid://bx20ai05chn7y"]
+
+[ext_resource type="Script" uid="uid://d2c3i82jeoucm" path="res://wfc/tile/data.gd" id="1_pqs3v"]
+
+[resource]
+script = ExtResource("1_pqs3v")
+id = 41
+allowed = [142936511611904, 36028797018963968, 6597338202112, 36028797018963968, 283674000966272, 36028797018963968, 3298539077632, 36028797018963968]
+atlas_coords = Vector2i(40, 0)
+metadata/_custom_type_script = "uid://d2c3i82jeoucm"
