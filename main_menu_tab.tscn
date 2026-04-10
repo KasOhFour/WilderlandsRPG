@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq2p3p11p6xdn"]
+
+[ext_resource type="Texture2D" uid="uid://daiuvm8a5mpc4" path="res://assets/ui/tab_inactive.png" id="1_jd5j6"]
+[ext_resource type="Script" uid="uid://imx4hmacvvc4" path="res://main_menu_tab.gd" id="2_6omvg"]
+
+[node name="Tab01" type="NinePatchRect"]
+custom_minimum_size = Vector2(13, 13)
+size_flags_horizontal = 3
+mouse_filter = 0
+texture = ExtResource("1_jd5j6")
+patch_margin_left = 1
+patch_margin_top = 2
+patch_margin_right = 1
+patch_margin_bottom = 1
+script = ExtResource("2_6omvg")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

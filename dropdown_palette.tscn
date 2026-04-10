@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh16kl4mbnph7"]
+
+[ext_resource type="Script" uid="uid://dal7v470xdpes" path="res://dropdown_palette.gd" id="1_nin8i"]
+
+[node name="DropdownPalette" type="VBoxContainer"]
+script = ExtResource("1_nin8i")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 9

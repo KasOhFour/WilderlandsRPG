@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://fknfq8ya4c0"]
+
+[ext_resource type="Script" uid="uid://bbslct27ru33r" path="res://player.gd" id="1_cn3ar"]
+[ext_resource type="Shader" uid="uid://bf80nwns23keq" path="res://assets/base_humanoid_gdsh.gdshader" id="3_1jxqw"]
+[ext_resource type="SpriteFrames" uid="uid://d226n7egoffky" path="res://assets/base_humanoid_mask.tres" id="3_2hs0m"]
+[ext_resource type="SpriteFrames" uid="uid://8h3tj55pqfx8" path="res://assets/base_humanoid_anim.tres" id="3_hqtel"]
+[ext_resource type="Texture2D" uid="uid://u3gq1xoq4ar8" path="res://assets/palettes/humanoid_palette_dark.png" id="4_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://bklk3p4dsuetj" path="res://assets/model_humanoid_shadow.png" id="4_v6vyt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dw050"]
+shader = ExtResource("3_1jxqw")
+shader_parameter/palette_width = 0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sweqy"]
+radius = 6.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_cn3ar")
+mask_frames = ExtResource("3_2hs0m")
+player_material = SubResource("ShaderMaterial_dw050")
+palette_texture = ExtResource("4_2hs0m")
+
+[node name="PlayerAnimation" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = ExtResource("3_hqtel")
+animation = &"idle_east"
+speed_scale = 0.55
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(0, 20)
+texture = ExtResource("4_v6vyt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14)
+shape = SubResource("CircleShape2D_sweqy")
+
+[connection signal="frame_changed" from="PlayerAnimation" to="." method="_on_player_animation_frame_changed"]

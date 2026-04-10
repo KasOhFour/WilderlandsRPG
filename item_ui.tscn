@@ -1,0 +1,106 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1ldrnms83c56"]
+
+[ext_resource type="Script" uid="uid://bn58jfx5e5ppc" path="res://item_ui.gd" id="1_mk07v"]
+[ext_resource type="Texture2D" uid="uid://cdg3g1r83vyul" path="res://assets/ui/gold_coin.png" id="2_a4meh"]
+
+[node name="ItemUI" type="Control"]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_mk07v")
+
+[node name="ItemShadow" type="Control" parent="."]
+modulate = Color(0, 0, 0, 0.588235)
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="ItemShadow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(7, 7)
+mouse_filter = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Item" type="TextureRect" parent="ItemShadow/Margin"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_a4meh")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Count" type="Label" parent="ItemShadow"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 12.0
+offset_right = 16.0
+offset_bottom = 17.3
+theme_override_font_sizes/font_size = 3
+text = "99"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ItemView" type="Control" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="ItemView"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(7, 7)
+mouse_filter = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Item" type="TextureRect" parent="ItemView/Margin"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_a4meh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Count" type="Label" parent="ItemView"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 12.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_font_sizes/font_size = 3
+text = "99"
+horizontal_alignment = 2
+vertical_alignment = 1

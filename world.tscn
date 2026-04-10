@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://bn4sy16ww2q6n"]
+
+[ext_resource type="PackedScene" uid="uid://fknfq8ya4c0" path="res://player.tscn" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://1orbdx3ylu3n" path="res://world.gd" id="1_wse8f"]
+[ext_resource type="Script" uid="uid://dftamwckk50k4" path="res://palette_container.gd" id="3_aqk2v"]
+[ext_resource type="Script" uid="uid://whxhu86tq1n2" path="res://player_palette_menu.gd" id="3_wse8f"]
+[ext_resource type="Script" uid="uid://iokmd1dqikek" path="res://color_button.gd" id="4_ic0uy"]
+[ext_resource type="Script" uid="uid://cmivivohqr1j8" path="res://palette.gd" id="4_wse8f"]
+[ext_resource type="Resource" uid="uid://cqj5ujvhj7jdp" path="res://assets/palettes/mannish_palette.tres" id="5_ic0uy"]
+[ext_resource type="Resource" uid="uid://ddgojdewkrwj2" path="res://assets/palettes/fuernan_palette.tres" id="6_k3n1d"]
+[ext_resource type="Resource" uid="uid://bvaht6gyxv36x" path="res://assets/palettes/delvani_palette.tres" id="7_2o6r5"]
+[ext_resource type="Resource" uid="uid://ckaswcb3r4i6l" path="res://assets/palettes/goblin_palette.tres" id="8_70uel"]
+[ext_resource type="Resource" uid="uid://do1eul37p2ujm" path="res://assets/palettes/boreal_palette.tres" id="9_hiqwa"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_wse8f")
+
+[node name="Player" parent="." instance=ExtResource("1_f3sb7")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerPaletteMenu" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 160.0
+offset_bottom = 116.0
+script = ExtResource("3_wse8f")
+
+[node name="ScleraPicker" type="HBoxContainer" parent="CanvasLayer/PlayerPaletteMenu"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/PlayerPaletteMenu/ScleraPicker"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Sclera"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="CanvasLayer/PlayerPaletteMenu/ScleraPicker"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 1)
+edit_alpha = false
+
+[node name="IrisPicker" type="HBoxContainer" parent="CanvasLayer/PlayerPaletteMenu"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/PlayerPaletteMenu/IrisPicker"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Iris"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="CanvasLayer/PlayerPaletteMenu/IrisPicker"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+color = Color(0.0334077, 0.271057, 1, 1)
+
+[node name="SkinPickerPreview" type="HBoxContainer" parent="CanvasLayer/PlayerPaletteMenu"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/PlayerPaletteMenu/SkinPickerPreview"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Skin"
+
+[node name="Button" type="Button" parent="CanvasLayer/PlayerPaletteMenu/SkinPickerPreview"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+script = ExtResource("4_ic0uy")
+metadata/_custom_type_script = "uid://iokmd1dqikek"
+
+[node name="SkinPicker" type="VBoxContainer" parent="CanvasLayer/PlayerPaletteMenu"]
+layout_mode = 2
+script = ExtResource("3_aqk2v")
+palettes = Array[ExtResource("4_wse8f")]([ExtResource("5_ic0uy"), ExtResource("6_k3n1d"), ExtResource("7_2o6r5"), ExtResource("8_70uel"), ExtResource("9_hiqwa")])
+
+[connection signal="pressed" from="CanvasLayer/PlayerPaletteMenu/SkinPickerPreview/Button" to="CanvasLayer/PlayerPaletteMenu" method="_on_skin_picker_preview_pressed"]
