@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Palette" load_steps=3 format=3 uid="uid://ddgojdewkrwj2"]
+
+[ext_resource type="Script" uid="uid://cmivivohqr1j8" path="res://palette.gd" id="1_00gjf"]
+[ext_resource type="Texture2D" uid="uid://dgmpbaavknue3" path="res://assets/palettes/fuernan_palette.png" id="1_jextl"]
+
+[resource]
+script = ExtResource("1_00gjf")
+name = "Fuernan"
+palette_texture = ExtResource("1_jextl")
+metadata/_custom_type_script = "uid://cmivivohqr1j8"

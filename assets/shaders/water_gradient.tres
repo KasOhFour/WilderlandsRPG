@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dyagrw8i40tud"]
+
+[ext_resource type="Shader" uid="uid://kadh4hj6wnp3" path="res://assets/shaders/water_gradient.gdshader" id="1_4kp37"]
+
+[resource]
+shader = ExtResource("1_4kp37")
+shader_parameter/water_level = 0.5
+shader_parameter/depth_range = 0.25

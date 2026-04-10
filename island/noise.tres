@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="IslandNoise" load_steps=5 format=3 uid="uid://3yet3ryn1rx0"]
+
+[ext_resource type="Script" uid="uid://dg0e6s84ibqaf" path="res://island/IslandNoise.gd" id="1_4nyrb"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wjt0u"]
+noise_type = 3
+frequency = 0.015
+fractal_gain = 0.6
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hki6j"]
+noise_type = 2
+frequency = 0.33
+fractal_type = 0
+cellular_distance_function = 3
+cellular_return_type = 0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ilrii"]
+frequency = 0.08
+fractal_type = 2
+fractal_octaves = 1
+domain_warp_type = 2
+domain_warp_fractal_type = 0
+
+[resource]
+script = ExtResource("1_4nyrb")
+depth_noise = SubResource("FastNoiseLite_wjt0u")
+region_noise = SubResource("FastNoiseLite_hki6j")
+river_noise = SubResource("FastNoiseLite_ilrii")
+metadata/_custom_type_script = "uid://dg0e6s84ibqaf"
