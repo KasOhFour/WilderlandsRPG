@@ -1,5 +1,6 @@
 class_name MainMenu extends NinePatchRect
 
+@onready var dimmer := $ColorRect
 @onready var player_sheet := $PlayerSheet
 @onready var main_menu_tab_group := $MainMenuTabGroup
 
@@ -11,6 +12,12 @@ class_name MainMenu extends NinePatchRect
 	main_menu_tab_group.get_child(4): null,
 	main_menu_tab_group.get_child(5): null,
 }
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed('toggle_menu'):
+		dimmer.visible = not visible
+		visible = not visible
 
 
 func _tab_activated(activated_tab: MainMenuTab, deactivated_tab: MainMenuTab) -> void:

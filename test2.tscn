@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dy2ko54m0ioay"]
+[gd_scene load_steps=51 format=3 uid="uid://dy2ko54m0ioay"]
 
 [ext_resource type="Texture2D" uid="uid://h4jh0hy6srsy" path="res://assets/farm_layout.jpg" id="1_qo4iv"]
 [ext_resource type="Texture2D" uid="uid://cghylnebvw00p" path="res://assets/ui/panel_deep.png" id="1_vfvc6"]
@@ -30,6 +30,30 @@
 [ext_resource type="Script" uid="uid://dr8hukg326avf" path="res://inventory_system.gd" id="18_vg1ue"]
 [ext_resource type="Texture2D" uid="uid://cdg3g1r83vyul" path="res://assets/ui/gold_coin.png" id="19_ndycf"]
 [ext_resource type="PackedScene" uid="uid://c1ldrnms83c56" path="res://item_ui.tscn" id="19_tvkn4"]
+[ext_resource type="Texture2D" uid="uid://bt8otrmexkut0" path="res://assets/items/map.png" id="27_d2ywe"]
+[ext_resource type="Texture2D" uid="uid://dg7hsol8tx1iv" path="res://assets/items/hammer.png" id="27_h03ne"]
+[ext_resource type="Texture2D" uid="uid://cjgrq1pog8mc2" path="res://assets/items/wax_seal_cold.png" id="27_nxwjm"]
+[ext_resource type="Texture2D" uid="uid://k4nlvuc8sy3o" path="res://assets/items/red_scroll.png" id="28_0rg5v"]
+[ext_resource type="Texture2D" uid="uid://4mt3qovfudac" path="res://assets/items/wax_seal_melted.png" id="28_7ctvh"]
+[ext_resource type="Texture2D" uid="uid://dsrq1nnthd7cd" path="res://assets/items/hammer_down.png" id="28_wxllq"]
+[ext_resource type="Texture2D" uid="uid://4iagn6a0tbxj" path="res://assets/items/leather_maw_open.png" id="31_3ipnd"]
+[ext_resource type="PackedScene" uid="uid://btc0rvbtenj5h" path="res://cursor_layer.tscn" id="31_dlbge"]
+[ext_resource type="Texture2D" uid="uid://347x7dv63l8b" path="res://assets/items/leather_maw_closed.png" id="32_wh5g1"]
+[ext_resource type="Texture2D" uid="uid://d2dd02knvo1nh" path="res://assets/ui/cursor_grab.png" id="33_6kr8q"]
+[ext_resource type="Texture2D" uid="uid://bide40b1o3ppy" path="res://assets/ui/cursor_point.png" id="33_wh5g1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vg1ue"]
+blend_mode = 3
+
+[sub_resource type="Gradient" id="Gradient_vg1ue"]
+colors = PackedColorArray(0.666568, 0.666569, 0.666569, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dlbge"]
+gradient = SubResource("Gradient_vg1ue")
+width = 256
+height = 256
+fill_from = Vector2(1, 0)
+fill_to = Vector2(1, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6dmkw"]
 content_margin_left = 1.0
@@ -65,13 +89,14 @@ grow_vertical = 2
 pivot_offset = Vector2(960, 540)
 
 [node name="TextureRect" type="TextureRect" parent="."]
+z_index = -2
 layout_mode = 0
 offset_right = 803.0
 offset_bottom = 655.0
 texture = ExtResource("1_qo4iv")
 
 [node name="MainMenu" type="NinePatchRect" parent="."]
-custom_minimum_size = Vector2(266, 160)
+custom_minimum_size = Vector2(266, 176)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -84,7 +109,7 @@ offset_right = 133.0
 offset_bottom = 82.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(133, 81)
+pivot_offset = Vector2(133, 88)
 texture = ExtResource("1_vfvc6")
 draw_center = false
 patch_margin_left = 6
@@ -93,8 +118,21 @@ patch_margin_right = 6
 patch_margin_bottom = 6
 script = ExtResource("2_00ovr")
 
+[node name="ColorRect" type="ColorRect" parent="MainMenu"]
+top_level = true
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.705882)
+
 [node name="Background" type="NinePatchRect" parent="MainMenu"]
 self_modulate = Color(1, 1, 1, 0.992157)
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,6 +144,24 @@ patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
+
+[node name="Gradient" type="MarginContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/Gradient"]
+material = SubResource("CanvasItemMaterial_vg1ue")
+layout_mode = 2
+texture = SubResource("GradientTexture2D_dlbge")
+expand_mode = 1
 
 [node name="PlayerSheet" type="Control" parent="MainMenu"]
 layout_mode = 1
@@ -116,18 +172,18 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PlayerDisplay" type="Control" parent="MainMenu/PlayerSheet"]
+layout_mode = 1
 anchors_preset = 0
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 85.0
-offset_bottom = 62.0
+offset_bottom = 64.0
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMenu/PlayerSheet/PlayerDisplay"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 1
@@ -249,16 +305,15 @@ patch_margin_bottom = 1
 [node name="ActionSlotDisplay" type="Control" parent="MainMenu/PlayerSheet"]
 anchors_preset = 0
 offset_left = 2.0
-offset_top = 62.0
+offset_top = 64.0
 offset_right = 85.0
-offset_bottom = 150.0
+offset_bottom = 164.0
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMenu/PlayerSheet/ActionSlotDisplay"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 1
@@ -510,13 +565,14 @@ anchors_preset = 0
 offset_left = 90.0
 offset_top = 96.0
 offset_right = 248.0
-offset_bottom = 142.0
+offset_bottom = 160.0
 
 [node name="InventorySystem" type="GridContainer" parent="MainMenu/PlayerSheet/InventorySlotDisplay"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 2
@@ -1004,7 +1060,169 @@ script = ExtResource("18_k3lp0")
 [node name="ItemUI" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot29" instance=ExtResource("19_tvkn4")]
 layout_mode = 1
 
+[node name="InventorySlot30" type="NinePatchRect" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem"]
+self_modulate = Color(1, 1, 1, 0.529412)
+material = SubResource("CanvasItemMaterial_qo4iv")
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("7_kshcw")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+script = ExtResource("18_k3lp0")
+
+[node name="ItemUI" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot30" instance=ExtResource("19_tvkn4")]
+layout_mode = 1
+
+[node name="InventorySlot31" type="NinePatchRect" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem"]
+self_modulate = Color(1, 1, 1, 0.529412)
+material = SubResource("CanvasItemMaterial_qo4iv")
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("7_kshcw")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+script = ExtResource("18_k3lp0")
+
+[node name="ItemUI" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot31" instance=ExtResource("19_tvkn4")]
+layout_mode = 1
+
+[node name="InventorySlot32" type="NinePatchRect" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem"]
+self_modulate = Color(1, 1, 1, 0.529412)
+material = SubResource("CanvasItemMaterial_qo4iv")
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("7_kshcw")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+script = ExtResource("18_k3lp0")
+
+[node name="ItemUI" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot32" instance=ExtResource("19_tvkn4")]
+layout_mode = 1
+
+[node name="InventorySlot33" type="NinePatchRect" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem"]
+self_modulate = Color(1, 1, 1, 0.529412)
+material = SubResource("CanvasItemMaterial_qo4iv")
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("7_kshcw")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+script = ExtResource("18_k3lp0")
+
+[node name="ItemUI" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot33" instance=ExtResource("19_tvkn4")]
+layout_mode = 1
+
+[node name="InventorySlot34" type="NinePatchRect" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem"]
+self_modulate = Color(1, 1, 1, 0.529412)
+material = SubResource("CanvasItemMaterial_qo4iv")
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("7_kshcw")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+script = ExtResource("18_k3lp0")
+
+[node name="ItemUI" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot34" instance=ExtResource("19_tvkn4")]
+layout_mode = 1
+
+[node name="InventorySlot35" type="NinePatchRect" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem"]
+self_modulate = Color(1, 1, 1, 0.529412)
+material = SubResource("CanvasItemMaterial_qo4iv")
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("7_kshcw")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+script = ExtResource("18_k3lp0")
+
+[node name="ItemUI" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot35" instance=ExtResource("19_tvkn4")]
+layout_mode = 1
+
+[node name="InventorySlot36" type="NinePatchRect" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem"]
+self_modulate = Color(1, 1, 1, 0.529412)
+material = SubResource("CanvasItemMaterial_qo4iv")
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("7_kshcw")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+script = ExtResource("18_k3lp0")
+
+[node name="ItemUI" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot36" instance=ExtResource("19_tvkn4")]
+layout_mode = 1
+
+[node name="InventorySlot37" type="NinePatchRect" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem"]
+self_modulate = Color(1, 1, 1, 0.529412)
+material = SubResource("CanvasItemMaterial_qo4iv")
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("7_kshcw")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+script = ExtResource("18_k3lp0")
+
+[node name="ItemUI" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot37" instance=ExtResource("19_tvkn4")]
+layout_mode = 1
+
+[node name="InventorySlot38" type="NinePatchRect" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem"]
+self_modulate = Color(1, 1, 1, 0.529412)
+material = SubResource("CanvasItemMaterial_qo4iv")
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("7_kshcw")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+script = ExtResource("18_k3lp0")
+
+[node name="ItemUI" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot38" instance=ExtResource("19_tvkn4")]
+layout_mode = 1
+
+[node name="InventorySlot39" type="NinePatchRect" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem"]
+self_modulate = Color(1, 1, 1, 0.529412)
+material = SubResource("CanvasItemMaterial_qo4iv")
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("7_kshcw")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+script = ExtResource("18_k3lp0")
+
+[node name="ItemUI" parent="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot39" instance=ExtResource("19_tvkn4")]
+layout_mode = 1
+
 [node name="SpellBookDisplay" type="Control" parent="MainMenu/PlayerSheet"]
+custom_minimum_size = Vector2(16, 143)
+layout_mode = 1
 anchors_preset = 0
 offset_left = 73.0
 offset_top = 17.0
@@ -1050,7 +1268,7 @@ patch_margin_right = 1
 patch_margin_bottom = 1
 
 [node name="ColorRect2" type="ColorRect" parent="MainMenu/PlayerSheet/SpellBookDisplay/VBoxContainer"]
-custom_minimum_size = Vector2(2, 37)
+custom_minimum_size = Vector2(2, 53)
 layout_mode = 2
 size_flags_horizontal = 4
 color = Color(0.294118, 0.215686, 0.192157, 1)
@@ -1081,6 +1299,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 1
 alignment = 2
 
 [node name="MarginContainer1" type="MarginContainer" parent="MainMenu/PlayerSheet/CoinsDisplay/HBoxContainer"]
@@ -1098,14 +1317,18 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="MainMenu/PlayerSheet/CoinsDisplay/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
 layout_mode = 2
-theme_override_constants/margin_bottom = 1
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 2
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu/PlayerSheet/CoinsDisplay/HBoxContainer/MarginContainer2"]
 layout_mode = 2
-size_flags_vertical = 8
 texture = ExtResource("19_ndycf")
-stretch_mode = 2
+expand_mode = 1
+stretch_mode = 4
 
 [node name="MainMenuTabGroup" type="HBoxContainer" parent="MainMenu"]
 layout_mode = 1
@@ -1126,18 +1349,30 @@ layout_mode = 2
 
 [node name="Tab02" parent="MainMenu/MainMenuTabGroup" instance=ExtResource("18_40bhu")]
 layout_mode = 2
+active_item_texture = ExtResource("28_wxllq")
+inactive_item_texture = ExtResource("27_h03ne")
 
 [node name="Tab03" parent="MainMenu/MainMenuTabGroup" instance=ExtResource("18_40bhu")]
 layout_mode = 2
+active_item_texture = ExtResource("27_d2ywe")
+inactive_item_texture = ExtResource("28_0rg5v")
+inactive_item_margins = 1
 
 [node name="Tab04" parent="MainMenu/MainMenuTabGroup" instance=ExtResource("18_40bhu")]
 layout_mode = 2
+active_item_texture = ExtResource("31_3ipnd")
+inactive_item_texture = ExtResource("32_wh5g1")
 
 [node name="Tab05" parent="MainMenu/MainMenuTabGroup" instance=ExtResource("18_40bhu")]
 layout_mode = 2
+active_item_texture = ExtResource("33_6kr8q")
+inactive_item_texture = ExtResource("33_wh5g1")
+inactive_item_margins = 1
 
 [node name="Tab06" parent="MainMenu/MainMenuTabGroup" instance=ExtResource("18_40bhu")]
 layout_mode = 2
+active_item_texture = ExtResource("28_7ctvh")
+inactive_item_texture = ExtResource("27_nxwjm")
 
 [node name="CornerDecals" type="Control" parent="MainMenu"]
 layout_mode = 1
@@ -1178,18 +1413,18 @@ stretch_mode = 2
 [node name="CornerSE" type="TextureRect" parent="MainMenu/CornerDecals"]
 layout_mode = 0
 offset_left = 256.0
-offset_top = 142.0
+offset_top = 156.0
 offset_right = 263.0
-offset_bottom = 149.0
+offset_bottom = 163.0
 texture = ExtResource("5_yerdr")
 stretch_mode = 2
 
 [node name="CornerSW" type="TextureRect" parent="MainMenu/CornerDecals"]
 layout_mode = 0
 offset_left = 3.0
-offset_top = 142.0
+offset_top = 156.0
 offset_right = 10.0
-offset_bottom = 149.0
+offset_bottom = 163.0
 texture = ExtResource("4_yerdr")
 stretch_mode = 2
 
@@ -1217,7 +1452,7 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.129412, 0.0784314, 0.0627451, 1)
 
-[node name="HoverLayer" type="CanvasLayer" parent="." groups=["hover_layer"]]
+[node name="CursorLayer" parent="." instance=ExtResource("31_dlbge")]
 
 [connection signal="mouse_entered" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot00" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot00" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot00" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot00" method="_on_mouse_exited"]
@@ -1279,4 +1514,24 @@ color = Color(0.129412, 0.0784314, 0.0627451, 1)
 [connection signal="mouse_exited" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot28" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot28" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot29" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot29" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot29" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot29" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot30" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot30" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot30" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot30" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot31" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot31" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot31" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot31" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot32" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot32" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot32" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot32" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot33" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot33" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot33" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot33" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot34" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot34" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot34" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot34" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot35" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot35" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot35" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot35" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot36" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot36" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot36" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot36" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot37" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot37" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot37" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot37" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot38" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot38" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot38" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot38" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot39" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot39" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot39" to="MainMenu/PlayerSheet/InventorySlotDisplay/InventorySystem/InventorySlot39" method="_on_mouse_exited"]
 [connection signal="tab_activated" from="MainMenu/MainMenuTabGroup" to="MainMenu" method="_tab_activated"]

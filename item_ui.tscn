@@ -54,9 +54,9 @@ stretch_mode = 4
 
 [node name="Count" type="Label" parent="ItemShadow"]
 layout_mode = 0
-offset_left = 8.0
+offset_left = 7.0
 offset_top = 12.0
-offset_right = 16.0
+offset_right = 15.0
 offset_bottom = 17.3
 theme_override_font_sizes/font_size = 3
 text = "99"
@@ -96,9 +96,9 @@ stretch_mode = 5
 
 [node name="Count" type="Label" parent="ItemView"]
 layout_mode = 0
-offset_left = 8.0
+offset_left = 7.0
 offset_top = 12.0
-offset_right = 16.0
+offset_right = 15.0
 offset_bottom = 18.0
 theme_override_font_sizes/font_size = 3
 text = "99"
