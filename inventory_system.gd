@@ -2,8 +2,17 @@ class_name InventorySystem extends GridContainer
 
 
 func _ready() -> void:
-	var is_first_child := true
+	var i := 0
 	for child: InventorySlot in get_children():
-		if not is_first_child:
-			child.item_ui = null
-		is_first_child = false
+		child.item_ui.item_stack.clear()
+		if i == 0 or i == 9:
+			child.item_ui.item_stack = ItemStack.new(
+				preload('res://gold_coin.tres'),
+				99
+			)
+		if i == 4:
+			child.item_ui.item_stack = ItemStack.new(
+				preload('res://nullcore.tres'),
+				10
+			)
+		i += 1

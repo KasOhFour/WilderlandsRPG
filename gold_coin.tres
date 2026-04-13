@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dtnwusxob76s1"]
+
+[ext_resource type="Script" uid="uid://ddn6swlndwlm" path="res://item.gd" id="1_45ts2"]
+[ext_resource type="Texture2D" uid="uid://cdg3g1r83vyul" path="res://assets/ui/gold_coin.png" id="2_tgbp2"]
+
+[resource]
+script = ExtResource("1_45ts2")
+id = 0
+name = "Gold Coin"
+rarity = 16777215
+texture = ExtResource("2_tgbp2")
+margins = 4
+max_stack_count = 99
+metadata/_custom_type_script = "uid://ddn6swlndwlm"

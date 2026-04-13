@@ -1,10 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq2p3p11p6xdn"]
+[gd_scene load_steps=8 format=3 uid="uid://bq2p3p11p6xdn"]
 
 [ext_resource type="Texture2D" uid="uid://daiuvm8a5mpc4" path="res://assets/ui/tab_inactive.png" id="1_jd5j6"]
 [ext_resource type="Script" uid="uid://imx4hmacvvc4" path="res://main_menu_tab.gd" id="2_6omvg"]
+[ext_resource type="Texture2D" uid="uid://cwc0w8va2ydh1" path="res://assets/items/backpack_closed.png" id="3_6omvg"]
+[ext_resource type="Texture2D" uid="uid://cpoxqq6fgn48a" path="res://assets/items/backpack_opened.png" id="3_y3vw8"]
+[ext_resource type="Shader" uid="uid://ckt3voas15qn5" path="res://blend_mode_overlay.gdshader" id="5_p7l6v"]
+[ext_resource type="Texture2D" uid="uid://cuk7hmwx6q6i" path="res://assets/items/ellipses.png" id="5_w0sbl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rypwx"]
+shader = ExtResource("5_p7l6v")
 
 [node name="Tab01" type="NinePatchRect"]
+self_modulate = Color(1, 1, 1, 0.521569)
 custom_minimum_size = Vector2(13, 13)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.5
+offset_top = -6.5
+offset_right = 6.5
+offset_bottom = 6.5
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 mouse_filter = 0
 texture = ExtResource("1_jd5j6")
@@ -13,5 +32,90 @@ patch_margin_top = 2
 patch_margin_right = 1
 patch_margin_bottom = 1
 script = ExtResource("2_6omvg")
+active_item_texture = ExtResource("3_y3vw8")
+inactive_item_texture = ExtResource("3_6omvg")
+
+[node name="ItemShadow" type="Control" parent="."]
+modulate = Color(0, 0, 0, 0.588235)
+custom_minimum_size = Vector2(9, 9)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(4.5, 4.5)
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="ItemShadow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(4.5, 4.5)
+mouse_filter = 2
+
+[node name="Item" type="TextureRect" parent="ItemShadow/Margin"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_6omvg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemView" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(4.5, 4.5)
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="ItemView"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(4.5, 4.5)
+mouse_filter = 2
+
+[node name="Item" type="TextureRect" parent="ItemView/Margin"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_6omvg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ellipses" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_rypwx")
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_w0sbl")
+expand_mode = 1
+stretch_mode = 3
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
