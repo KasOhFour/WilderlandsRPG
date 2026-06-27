@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dauw6t3a6m6wp"]
+
+[ext_resource type="Script" uid="uid://cco5m721tp85t" path="res://tree_test.gd" id="1_2yo4q"]
+[ext_resource type="Texture2D" uid="uid://3s0dq6f5rgtm" path="res://assets/birch_top.png" id="2_2yo4q"]
+[ext_resource type="Texture2D" uid="uid://o1jmrh4pfpvn" path="res://assets/spruce_stump.png" id="2_rkv16"]
+[ext_resource type="Texture2D" uid="uid://cdo280uoust5" path="res://assets/spruce_top.png" id="4_2p6rh"]
+[ext_resource type="Script" uid="uid://re8xonoj3avh" path="res://sway_physics_2d.gd" id="4_oh4mo"]
+
+[node name="Tree2D" type="Node2D" unique_id=726584610]
+position = Vector2(240, 80)
+script = ExtResource("1_2yo4q")
+
+[node name="Stump" type="Node2D" parent="." unique_id=1539810681]
+
+[node name="Sprite2D" type="Sprite2D" parent="Stump" unique_id=362151859]
+texture = ExtResource("2_rkv16")
+
+[node name="Treetop" type="Node2D" parent="." unique_id=38319077]
+position = Vector2(-4, -2)
+
+[node name="Polygon2D" type="Polygon2D" parent="Treetop" unique_id=802226139]
+visible = false
+position = Vector2(-20, -84)
+texture = ExtResource("2_2yo4q")
+polygon = PackedVector2Array(0, 0, 24, 0, 48.000015, 0, 48.000015, 24.000002, 47.999985, 48, 47.999985, 72.00001, 48.000015, 96, 24, 96, 0, 96, 0, 72, 0, 48, 0, 24)
+uv = PackedVector2Array(0, 0, 24, 0, 48.000015, 0, 47.999985, 24.000002, 47.999985, 48.000004, 47.999985, 72.00001, 48.000015, 96, 23.999985, 96.00001, 0, 96, 0, 72.00001, 0, 48.000004, 0, 24)
+
+[node name="Sprite2D" type="Sprite2D" parent="Treetop" unique_id=1102983637]
+position = Vector2(4, -36)
+texture = ExtResource("4_2p6rh")
+
+[node name="SwayPhysics2D" type="Node" parent="Treetop" unique_id=798497104]
+script = ExtResource("4_oh4mo")
+rest_angle = 6.0
+metadata/_custom_type_script = "uid://re8xonoj3avh"
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1098612580]
+gizmo_extents = 80.0
+
+[node name="HitFromLeft" type="Marker2D" parent="." unique_id=820260000]
+position = Vector2(-8, 0)
+gizmo_extents = 80.0
+
+[node name="HitFromRight" type="Marker2D" parent="." unique_id=772560990]
+position = Vector2(8, 0)
+gizmo_extents = 80.0

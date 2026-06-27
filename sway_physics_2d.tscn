@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cvw1cyxlgfv6f"]
+
+[ext_resource type="Script" uid="uid://re8xonoj3avh" path="res://sway_physics_2d.gd" id="1_m65gf"]
+
+[node name="SwayPhysics2D" type="Node" unique_id=1823755711]
+script = ExtResource("1_m65gf")

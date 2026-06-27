@@ -1,19 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkrhxmgvx3in6"]
+[gd_scene format=3 uid="uid://bkrhxmgvx3in6"]
 
 [ext_resource type="Script" uid="uid://jonrqej4f0dc" path="res://map_renderer.gd" id="1_35ej1"]
 [ext_resource type="Script" uid="uid://drnxalu8raosx" path="res://camera_2d.gd" id="2_6583d"]
 
-[node name="MapRenderer" type="Node2D"]
+[node name="MapRenderer" type="Node2D" unique_id=1617764941]
 y_sort_enabled = true
 script = ExtResource("1_35ej1")
 
-[node name="TerrainLayer" type="TileMapLayer" parent="."]
+[node name="TerrainLayer" type="TileMapLayer" parent="." unique_id=118795984]
 
-[node name="ShadowLayer" type="TileMapLayer" parent="."]
+[node name="ShadowLayer" type="TileMapLayer" parent="." unique_id=1457148949]
 
-[node name="DetailLayer" type="TileMapLayer" parent="."]
+[node name="DetailLayer" type="TileMapLayer" parent="." unique_id=317775568]
 
-[node name="WaterLayer" type="TileMapLayer" parent="."]
+[node name="WaterLayer" type="TileMapLayer" parent="." unique_id=615497226]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1329164676]
 script = ExtResource("2_6583d")

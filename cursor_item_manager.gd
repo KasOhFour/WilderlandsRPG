@@ -2,16 +2,21 @@ class_name CursorItemManager
 extends Node
 
 
-var cursor_item_ui := _cursor_item_ui:
+var isui := _isui:
 	set(value):
-		var orphan := _cursor_item_ui
-		_cursor_item_ui = value
+		var orphan := _isui
+		_isui = value
 		call_deferred('_reparent', orphan)
 	get:
-		return _cursor_item_ui
+		return _isui
+var item_stack: ItemStack:
+	set(value):
+		isui.item_stack = value
+	get:
+		return isui.item_stack
 var hovered_stacks: Dictionary[ItemStack, bool] = {}
 var dragging_stack := ItemStack.new(null, 0)
-var _cursor_item_ui: ItemUI = preload('res://item_ui.tscn').instantiate()
+var _isui: ItemStackUI = preload('res://item_stack_ui.tscn').instantiate()
 
 
 func is_dragging() -> bool:
@@ -20,22 +25,21 @@ func is_dragging() -> bool:
 
 
 func _ready() -> void:
-	cursor_item_ui = _cursor_item_ui
-	var item_stack := ItemStack.new(Item.new(), 0)
-	cursor_item_ui.item_stack = item_stack
+	isui = _isui
+	item_stack = ItemStack.new(null, 0)
 
 
 func _process(_delta: float) -> void:
-	if cursor_item_ui:
-		cursor_item_ui.global_position = get_tree().root.get_viewport().get_mouse_position()
-		var item_stack: ItemStack = cursor_item_ui.item_stack
+	if isui:
+		isui.global_position = get_tree().root.get_viewport().get_mouse_position()
 		if item_stack:
-			cursor_item_ui.visible = not item_stack.is_empty()
+			isui.visible = not item_stack.is_empty()
 	if is_dragging():
 		if dragging_stack.is_empty():
 			var hovered_stack: ItemStack = hovered_stacks.keys()[0]
 			dragging_stack = hovered_stack.copy()
-			print(dragging_stack.count)
+			if not item_stack.is_empty():
+				item_stack.pop_to(dragging_stack, item_stack.count)
 
 
 func _input(event: InputEvent) -> void:
@@ -45,8 +49,8 @@ func _input(event: InputEvent) -> void:
 			dragging_stack.clear()
 
 
-func _reparent(orphan: ItemUI) -> void:
-	if not cursor_item_ui:
+func _reparent(orphan: ItemStackUI) -> void:
+	if not isui:
 		if orphan and orphan.get_parent() == self:
 			orphan.queue_free()
 		return
@@ -55,4 +59,4 @@ func _reparent(orphan: ItemUI) -> void:
 	if not cursor_layer:
 		return
 
-	cursor_layer.add_child(cursor_item_ui)
+	cursor_layer.add_child(isui)

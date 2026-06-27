@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cfsewc4go45xo"]
+
+[ext_resource type="Texture2D" uid="uid://bn6fady56j7nm" path="res://assets/ui/display_flat.png" id="1_bfyh4"]
+[ext_resource type="Script" uid="uid://vw5tgnwgvh2q" path="res://inventory_slot.gd" id="2_75pi0"]
+[ext_resource type="PackedScene" uid="uid://c1ldrnms83c56" path="res://item_stack_ui.tscn" id="3_rhcms"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qo4iv"]
+blend_mode = 1
+
+[node name="InventorySlot00" type="NinePatchRect" unique_id=1032030837]
+self_modulate = Color(1, 1, 1, 0.529412)
+material = SubResource("CanvasItemMaterial_qo4iv")
+custom_minimum_size = Vector2(14, 14)
+mouse_filter = 0
+texture = ExtResource("1_bfyh4")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+script = ExtResource("2_75pi0")
+
+[node name="ItemStackUI" parent="." unique_id=431144896 instance=ExtResource("3_rhcms")]
+layout_mode = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c303a6ha1yjir"]
+[gd_scene format=3 uid="uid://c303a6ha1yjir"]
 
 [ext_resource type="Script" uid="uid://mcebe32y11o0" path="res://item_tool_tip.gd" id="1_0o6vt"]
 
@@ -13,7 +13,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.697578, 0.697578, 0.697577, 1)
 
-[node name="ItemTooltip" type="Control"]
+[node name="ItemTooltip" type="Control" unique_id=1994322344]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -26,7 +26,7 @@ scale = Vector2(0.45, 0.45)
 mouse_filter = 2
 script = ExtResource("1_0o6vt")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=346719415]
 clip_contents = false
 custom_minimum_size = Vector2(6, 14)
 layout_mode = 1
@@ -42,11 +42,11 @@ offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 8
 theme_override_font_sizes/bold_italics_font_size = 8
 theme_override_font_sizes/italics_font_size = 8
 theme_override_font_sizes/mono_font_size = 8
-theme_override_font_sizes/normal_font_size = 8
-theme_override_font_sizes/bold_font_size = 8
 bbcode_enabled = true
 fit_content = true
 scroll_active = false
@@ -54,7 +54,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="RichTextLabel"]
+[node name="MarginContainer" type="MarginContainer" parent="RichTextLabel" unique_id=330032688]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -68,7 +68,7 @@ theme_override_constants/margin_top = -4
 theme_override_constants/margin_right = -3
 theme_override_constants/margin_bottom = -2
 
-[node name="Panel" type="Panel" parent="RichTextLabel/MarginContainer"]
+[node name="Panel" type="Panel" parent="RichTextLabel/MarginContainer" unique_id=340448443]
 show_behind_parent = true
 material = SubResource("CanvasItemMaterial_0o6vt")
 layout_mode = 2

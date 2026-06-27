@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EntityStatusGauge" format=3 uid="uid://b04tiuj87ynym"]
+
+[ext_resource type="Script" uid="uid://7a5myittdosr" path="res://entity_status.gd" id="1_2ay7j"]
+[ext_resource type="Script" uid="uid://dc1wut305d1kn" path="res://entity_status_gauge.gd" id="2_fjjni"]
+
+[sub_resource type="Resource" id="Resource_0i543"]
+script = ExtResource("1_2ay7j")
+name = &"hitpoints"
+value = 20.0
+
+[sub_resource type="Resource" id="Resource_c5xdn"]
+script = ExtResource("1_2ay7j")
+name = &"hitpoints_max"
+value = 20.0
+
+[sub_resource type="Resource" id="Resource_cxvxd"]
+script = ExtResource("1_2ay7j")
+name = &"hitpoints_min"
+
+[resource]
+script = ExtResource("2_fjjni")
+entity_status = SubResource("Resource_0i543")
+entity_status_min = SubResource("Resource_cxvxd")
+entity_status_max = SubResource("Resource_c5xdn")
+metadata/_custom_type_script = "uid://dc1wut305d1kn"

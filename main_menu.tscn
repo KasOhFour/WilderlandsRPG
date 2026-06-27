@@ -1,0 +1,913 @@
+[gd_scene format=3 uid="uid://bk06o62gyogxe"]
+
+[ext_resource type="Texture2D" uid="uid://cghylnebvw00p" path="res://assets/ui/panel_deep.png" id="1_ix6bv"]
+[ext_resource type="Script" uid="uid://dlnltovejovk3" path="res://main_menu.gd" id="2_2kjvi"]
+[ext_resource type="LabelSettings" uid="uid://ckdph5d7e3y6v" path="res://ui_font_settings.tres" id="3_kvjq3"]
+[ext_resource type="Texture2D" uid="uid://bn6fady56j7nm" path="res://assets/ui/display_flat.png" id="4_h1gbt"]
+[ext_resource type="Texture2D" uid="uid://bxunvbjtfnr1a" path="res://assets/ui/display_dark.png" id="5_km3bq"]
+[ext_resource type="Texture2D" uid="uid://bx5cabu0lo4bp" path="res://assets/ui/xp_bar_base.png" id="6_7r7u4"]
+[ext_resource type="Texture2D" uid="uid://cfxumbacx0220" path="res://assets/ui/xp_bar_decal.png" id="7_gqv7n"]
+[ext_resource type="Texture2D" uid="uid://o8k3e0tjo6gw" path="res://assets/ui/xp_bar_filler.png" id="8_hkf1x"]
+[ext_resource type="Texture2D" uid="uid://cdiqxm4ms83f2" path="res://assets/ui/panel_shallow.png" id="9_e64eg"]
+[ext_resource type="Texture2D" uid="uid://dq4ally8d3jvl" path="res://assets/ui/display_indented.png" id="10_wh67g"]
+[ext_resource type="Texture2D" uid="uid://dfoywuc5akyd0" path="res://assets/ui/scroll_up.png" id="11_v2pes"]
+[ext_resource type="Texture2D" uid="uid://c3lx0koeb21mo" path="res://assets/ui/scroll_bar.png" id="12_cy76q"]
+[ext_resource type="Texture2D" uid="uid://bfhw24id3qfir" path="res://assets/ui/scroll_down.png" id="13_w3tfb"]
+[ext_resource type="Texture2D" uid="uid://wm3iofnrhuy0" path="res://assets/ui/display_special.png" id="14_dfeea"]
+[ext_resource type="Texture2D" uid="uid://cmcfep5hrc480" path="res://assets/ui/claw_decal_left.png" id="15_kojkm"]
+[ext_resource type="Texture2D" uid="uid://cuvv5ilgijxgj" path="res://assets/ui/claw_decal_right.png" id="16_m3v73"]
+[ext_resource type="Script" uid="uid://dr8hukg326avf" path="res://inventory_grid.gd" id="17_ivaxt"]
+[ext_resource type="PackedScene" uid="uid://cfsewc4go45xo" path="res://inventory_slot.tscn" id="18_ia58x"]
+[ext_resource type="Texture2D" uid="uid://3p7cgd2tns6b" path="res://assets/ui/chain_decal_top.png" id="19_f6p64"]
+[ext_resource type="Texture2D" uid="uid://du7buqjjch3sw" path="res://assets/ui/display_unique.png" id="20_1gtdl"]
+[ext_resource type="Texture2D" uid="uid://bcj47bqd0wyrb" path="res://assets/ui/chain_decal_bottom.png" id="21_nbjkp"]
+[ext_resource type="Texture2D" uid="uid://cdg3g1r83vyul" path="res://assets/ui/gold_coin.png" id="22_h1kn2"]
+[ext_resource type="Script" uid="uid://b8vk8ob1k8xgt" path="res://main_menu_tab_group.gd" id="23_vcx4h"]
+[ext_resource type="PackedScene" uid="uid://bq2p3p11p6xdn" path="res://main_menu_tab.tscn" id="24_g470i"]
+[ext_resource type="Texture2D" uid="uid://dsrq1nnthd7cd" path="res://assets/items/hammer_down.png" id="25_03cms"]
+[ext_resource type="Texture2D" uid="uid://dg7hsol8tx1iv" path="res://assets/items/hammer.png" id="26_t11nb"]
+[ext_resource type="Texture2D" uid="uid://bt8otrmexkut0" path="res://assets/items/map.png" id="27_r2a3d"]
+[ext_resource type="Texture2D" uid="uid://k4nlvuc8sy3o" path="res://assets/items/red_scroll.png" id="28_h83cl"]
+[ext_resource type="Texture2D" uid="uid://cff7jgw5mtkr4" path="res://assets/items/journal_open.png" id="29_jkke2"]
+[ext_resource type="Texture2D" uid="uid://bm2cig1xk17op" path="res://assets/items/journal_closed.png" id="30_80ept"]
+[ext_resource type="Texture2D" uid="uid://d2dd02knvo1nh" path="res://assets/ui/cursor_grab.png" id="31_cs3jf"]
+[ext_resource type="Texture2D" uid="uid://bide40b1o3ppy" path="res://assets/ui/cursor_point.png" id="32_g7l3v"]
+[ext_resource type="Texture2D" uid="uid://4mt3qovfudac" path="res://assets/items/wax_seal_melted.png" id="33_1gaup"]
+[ext_resource type="Texture2D" uid="uid://cjgrq1pog8mc2" path="res://assets/items/wax_seal_cold.png" id="34_kduks"]
+[ext_resource type="Texture2D" uid="uid://bi1yi44q7me5v" path="res://assets/ui/corner_ne.png" id="35_17qp0"]
+[ext_resource type="Texture2D" uid="uid://ooaw0ic1c6m1" path="res://assets/ui/corner_nw.png" id="36_6tx7i"]
+[ext_resource type="Texture2D" uid="uid://bxo18egsr4p2f" path="res://assets/ui/corner_se.png" id="37_83c6u"]
+[ext_resource type="Texture2D" uid="uid://8jtlarfhxqai" path="res://assets/ui/corner_sw.png" id="38_1o7fk"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vg1ue"]
+blend_mode = 3
+
+[sub_resource type="Gradient" id="Gradient_vg1ue"]
+colors = PackedColorArray(0.666568, 0.666569, 0.666569, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dlbge"]
+gradient = SubResource("Gradient_vg1ue")
+width = 256
+height = 256
+fill_from = Vector2(1, 0)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6dmkw"]
+content_margin_left = 1.0
+content_margin_right = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gri3u"]
+content_margin_left = 1.0
+content_margin_right = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phx4b"]
+texture = ExtResource("12_cy76q")
+texture_margin_top = 1.0
+texture_margin_bottom = 1.0
+modulate_color = Color(1, 1, 1, 0.686275)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ra32"]
+texture = ExtResource("12_cy76q")
+texture_margin_top = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4gp43"]
+
+[node name="MainMenu" type="NinePatchRect" unique_id=1797284859]
+custom_minimum_size = Vector2(266, 176)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -80.0
+offset_right = 133.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(133, 88)
+texture = ExtResource("1_ix6bv")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+script = ExtResource("2_2kjvi")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=868629320]
+top_level = true
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.705882)
+
+[node name="Background" type="NinePatchRect" parent="." unique_id=1710870598]
+modulate = Color(0.6810102, 0.68101007, 0.68101, 1)
+self_modulate = Color(1, 1, 1, 0.992157)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ix6bv")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Gradient" type="MarginContainer" parent="." unique_id=1957545300]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="TextureRect" type="TextureRect" parent="Gradient" unique_id=1315213884]
+material = SubResource("CanvasItemMaterial_vg1ue")
+layout_mode = 2
+texture = SubResource("GradientTexture2D_dlbge")
+expand_mode = 1
+
+[node name="PlayerSheet" type="Control" parent="." unique_id=305925532]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerDisplay" type="Control" parent="PlayerSheet" unique_id=154930557]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 85.0
+offset_bottom = 64.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerSheet/PlayerDisplay" unique_id=1755197150]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerSheet/PlayerDisplay/MarginContainer" unique_id=24350407]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="MarginContainer1" type="MarginContainer" parent="PlayerSheet/PlayerDisplay/MarginContainer/VBoxContainer" unique_id=1742444600]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 1
+
+[node name="Label" type="Label" parent="PlayerSheet/PlayerDisplay/MarginContainer/VBoxContainer/MarginContainer1" unique_id=2098540358]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Tav"
+label_settings = ExtResource("3_kvjq3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerSheet/PlayerDisplay/MarginContainer/VBoxContainer" unique_id=1244876348]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="EquipmentSlotsLeft" type="VBoxContainer" parent="PlayerSheet/PlayerDisplay/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1977739626]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Slot01" type="NinePatchRect" parent="PlayerSheet/PlayerDisplay/MarginContainer/VBoxContainer/HBoxContainer/EquipmentSlotsLeft" unique_id=166989161]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("4_h1gbt")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Slot02" type="NinePatchRect" parent="PlayerSheet/PlayerDisplay/MarginContainer/VBoxContainer/HBoxContainer/EquipmentSlotsLeft" unique_id=103405570]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("4_h1gbt")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Slot03" type="NinePatchRect" parent="PlayerSheet/PlayerDisplay/MarginContainer/VBoxContainer/HBoxContainer/EquipmentSlotsLeft" unique_id=918308078]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("4_h1gbt")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="PlayerInfo" type="VBoxContainer" parent="PlayerSheet/PlayerDisplay/MarginContainer/VBoxContainer/HBoxContainer" unique_id=432618080]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="PlayerDisplay" type="NinePatchRect" parent="PlayerSheet/PlayerDisplay/MarginContainer/VBoxContainer/HBoxContainer/PlayerInfo" unique_id=888407996]
+custom_minimum_size = Vector2(27, 40)
+layout_mode = 2
+texture = ExtResource("5_km3bq")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="XPBar" type="TextureProgressBar" parent="PlayerSheet/PlayerDisplay/MarginContainer/VBoxContainer/HBoxContainer/PlayerInfo" unique_id=320660305]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_under = ExtResource("6_7r7u4")
+texture_over = ExtResource("7_gqv7n")
+texture_progress = ExtResource("8_hkf1x")
+
+[node name="EquipmentSlotsRight" type="VBoxContainer" parent="PlayerSheet/PlayerDisplay/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1138563721]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Slot01" type="NinePatchRect" parent="PlayerSheet/PlayerDisplay/MarginContainer/VBoxContainer/HBoxContainer/EquipmentSlotsRight" unique_id=658107]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("4_h1gbt")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Slot02" type="NinePatchRect" parent="PlayerSheet/PlayerDisplay/MarginContainer/VBoxContainer/HBoxContainer/EquipmentSlotsRight" unique_id=1051345687]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("4_h1gbt")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Slot03" type="NinePatchRect" parent="PlayerSheet/PlayerDisplay/MarginContainer/VBoxContainer/HBoxContainer/EquipmentSlotsRight" unique_id=156801415]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("4_h1gbt")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="ActionSlotDisplay" type="Control" parent="PlayerSheet" unique_id=2031709579]
+anchors_preset = 0
+offset_left = 2.0
+offset_top = 64.0
+offset_right = 85.0
+offset_bottom = 164.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerSheet/ActionSlotDisplay" unique_id=878769029]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerSheet/ActionSlotDisplay/MarginContainer" unique_id=1831510787]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="ActionSlotLeft" type="NinePatchRect" parent="PlayerSheet/ActionSlotDisplay/MarginContainer/HBoxContainer" unique_id=551667832]
+custom_minimum_size = Vector2(20, 24)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("9_e64eg")
+patch_margin_left = 1
+patch_margin_top = 2
+patch_margin_right = 1
+patch_margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerSheet/ActionSlotDisplay/MarginContainer/HBoxContainer" unique_id=1664712144]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="ActionSlotTop" type="NinePatchRect" parent="PlayerSheet/ActionSlotDisplay/MarginContainer/HBoxContainer/VBoxContainer" unique_id=703473455]
+custom_minimum_size = Vector2(20, 24)
+layout_mode = 2
+texture = ExtResource("9_e64eg")
+patch_margin_left = 1
+patch_margin_top = 2
+patch_margin_right = 1
+patch_margin_bottom = 2
+
+[node name="ActionSlotBottom" type="NinePatchRect" parent="PlayerSheet/ActionSlotDisplay/MarginContainer/HBoxContainer/VBoxContainer" unique_id=964599955]
+custom_minimum_size = Vector2(20, 24)
+layout_mode = 2
+texture = ExtResource("9_e64eg")
+patch_margin_left = 1
+patch_margin_top = 2
+patch_margin_right = 1
+patch_margin_bottom = 2
+
+[node name="ActionSlotRight" type="NinePatchRect" parent="PlayerSheet/ActionSlotDisplay/MarginContainer/HBoxContainer" unique_id=1232823572]
+custom_minimum_size = Vector2(20, 24)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("9_e64eg")
+patch_margin_left = 1
+patch_margin_top = 2
+patch_margin_right = 1
+patch_margin_bottom = 2
+
+[node name="PlayerEffectsDisplay" type="Control" parent="PlayerSheet" unique_id=646077757]
+anchors_preset = 0
+offset_left = 90.0
+offset_top = 6.0
+offset_right = 254.0
+offset_bottom = 74.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerSheet/PlayerEffectsDisplay" unique_id=116769730]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PlayerSheet/PlayerEffectsDisplay/HBoxContainer" unique_id=1532955659]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture = ExtResource("10_wh67g")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="ScrollBar" type="VBoxContainer" parent="PlayerSheet/PlayerEffectsDisplay/HBoxContainer" unique_id=1512717872]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="ScrollUp" type="TextureRect" parent="PlayerSheet/PlayerEffectsDisplay/HBoxContainer/ScrollBar" unique_id=1844671559]
+layout_mode = 2
+texture = ExtResource("11_v2pes")
+stretch_mode = 2
+
+[node name="VScrollBar" type="VScrollBar" parent="PlayerSheet/PlayerEffectsDisplay/HBoxContainer/ScrollBar" unique_id=72383798]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/scroll = SubResource("StyleBoxEmpty_6dmkw")
+theme_override_styles/scroll_focus = SubResource("StyleBoxEmpty_gri3u")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_phx4b")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_7ra32")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_7ra32")
+max_value = 1.0
+page = 1.0
+
+[node name="ScrollDown" type="TextureRect" parent="PlayerSheet/PlayerEffectsDisplay/HBoxContainer/ScrollBar" unique_id=1812425625]
+layout_mode = 2
+texture = ExtResource("13_w3tfb")
+
+[node name="SpellSlotDisplay" type="Control" parent="PlayerSheet" unique_id=1851928411]
+anchors_preset = 0
+offset_left = 90.0
+offset_top = 75.0
+offset_right = 248.0
+offset_bottom = 89.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerSheet/SpellSlotDisplay" unique_id=1499244896]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="SpellSlot01" type="NinePatchRect" parent="PlayerSheet/SpellSlotDisplay/HBoxContainer" unique_id=1830987055]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("14_dfeea")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="SpellSlot02" type="NinePatchRect" parent="PlayerSheet/SpellSlotDisplay/HBoxContainer" unique_id=740647672]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("14_dfeea")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="SpellSlot03" type="NinePatchRect" parent="PlayerSheet/SpellSlotDisplay/HBoxContainer" unique_id=2044767548]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("14_dfeea")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="SpellSlot04" type="NinePatchRect" parent="PlayerSheet/SpellSlotDisplay/HBoxContainer" unique_id=1199290091]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("14_dfeea")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="SpellSlot05" type="NinePatchRect" parent="PlayerSheet/SpellSlotDisplay/HBoxContainer" unique_id=1970326673]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("14_dfeea")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="SpellSlot06" type="NinePatchRect" parent="PlayerSheet/SpellSlotDisplay/HBoxContainer" unique_id=1164523206]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("14_dfeea")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="SpellSlot07" type="NinePatchRect" parent="PlayerSheet/SpellSlotDisplay/HBoxContainer" unique_id=62689487]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("14_dfeea")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="SpellSlot08" type="NinePatchRect" parent="PlayerSheet/SpellSlotDisplay/HBoxContainer" unique_id=1618772207]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("14_dfeea")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="SpellSlot09" type="NinePatchRect" parent="PlayerSheet/SpellSlotDisplay/HBoxContainer" unique_id=1355148666]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("14_dfeea")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="SpellSlot10" type="NinePatchRect" parent="PlayerSheet/SpellSlotDisplay/HBoxContainer" unique_id=881735392]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("14_dfeea")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="StylizedSeparator" type="Control" parent="PlayerSheet" unique_id=548225098]
+anchors_preset = 0
+offset_left = 90.0
+offset_top = 91.0
+offset_right = 248.0
+offset_bottom = 94.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerSheet/StylizedSeparator" unique_id=362423045]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 1
+
+[node name="SeparatorLeft" type="TextureRect" parent="PlayerSheet/StylizedSeparator/HBoxContainer" unique_id=1749974283]
+layout_mode = 2
+texture = ExtResource("15_kojkm")
+stretch_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="PlayerSheet/StylizedSeparator/HBoxContainer" unique_id=1415846216]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+color = Color(0.294118, 0.215686, 0.192157, 1)
+
+[node name="SeparatorRight" type="TextureRect" parent="PlayerSheet/StylizedSeparator/HBoxContainer" unique_id=376735952]
+layout_mode = 2
+texture = ExtResource("16_m3v73")
+stretch_mode = 2
+
+[node name="InventorySlotDisplay" type="Control" parent="PlayerSheet" unique_id=858770173]
+anchors_preset = 0
+offset_left = 90.0
+offset_top = 96.0
+offset_right = 248.0
+offset_bottom = 160.0
+
+[node name="Inventory" type="GridContainer" parent="PlayerSheet/InventorySlotDisplay" unique_id=648714805]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 10
+script = ExtResource("17_ivaxt")
+
+[node name="InventorySlot00" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1032030837 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot01" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=714463870 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot02" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=124229903 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot03" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=579520089 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot04" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1107857813 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot05" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=307151439 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot06" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=469748236 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot07" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1189733973 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot08" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=411156244 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot09" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=819122934 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=286659151 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=91844591 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1473368530 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1021444449 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=648629430 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1423978546 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot16" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1847208999 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot17" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=333169545 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot18" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=854901360 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot19" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=243991465 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot20" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=752445645 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot21" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1233442112 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot22" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=881955869 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot23" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1378686946 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot24" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=836653951 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot25" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=94571920 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot26" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1389459221 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot27" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=462206949 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot28" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=592867694 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot29" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1122250073 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot30" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1728665378 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot31" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1004278162 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot32" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1658983046 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot33" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=541538403 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot34" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1207094061 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot35" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=473095297 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot36" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=249102278 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot37" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1907433899 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot38" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1341388445 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="InventorySlot39" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1701787465 instance=ExtResource("18_ia58x")]
+layout_mode = 2
+
+[node name="SpellBookDisplay" type="Control" parent="PlayerSheet" unique_id=316296347]
+custom_minimum_size = Vector2(16, 143)
+layout_mode = 1
+anchors_preset = 0
+offset_left = 73.0
+offset_top = 17.0
+offset_right = 89.0
+offset_bottom = 142.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerSheet/SpellBookDisplay" unique_id=1950757628]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect1" type="TextureRect" parent="PlayerSheet/SpellBookDisplay/VBoxContainer" unique_id=1427032488]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("19_f6p64")
+stretch_mode = 3
+
+[node name="HSeparator1" type="HSeparator" parent="PlayerSheet/SpellBookDisplay/VBoxContainer" unique_id=798323808]
+layout_mode = 2
+theme_override_constants/separation = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4gp43")
+
+[node name="ColorRect1" type="ColorRect" parent="PlayerSheet/SpellBookDisplay/VBoxContainer" unique_id=490173988]
+custom_minimum_size = Vector2(2, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(0.294118, 0.215686, 0.192157, 1)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PlayerSheet/SpellBookDisplay/VBoxContainer" unique_id=1463255253]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("20_1gtdl")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="ColorRect2" type="ColorRect" parent="PlayerSheet/SpellBookDisplay/VBoxContainer" unique_id=582204437]
+custom_minimum_size = Vector2(2, 53)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(0.294118, 0.215686, 0.192157, 1)
+
+[node name="HSeparator2" type="HSeparator" parent="PlayerSheet/SpellBookDisplay/VBoxContainer" unique_id=123764658]
+layout_mode = 2
+theme_override_constants/separation = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4gp43")
+
+[node name="TextureRect2" type="TextureRect" parent="PlayerSheet/SpellBookDisplay/VBoxContainer" unique_id=950017906]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("21_nbjkp")
+stretch_mode = 3
+
+[node name="CoinsDisplay" type="Control" parent="PlayerSheet" unique_id=1467209286]
+anchors_preset = 0
+offset_left = 182.0
+offset_top = 3.0
+offset_right = 248.0
+offset_bottom = 15.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerSheet/CoinsDisplay" unique_id=1603170798]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 1
+alignment = 2
+
+[node name="MarginContainer1" type="MarginContainer" parent="PlayerSheet/CoinsDisplay/HBoxContainer" unique_id=1525540733]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 3
+
+[node name="Label" type="Label" parent="PlayerSheet/CoinsDisplay/HBoxContainer/MarginContainer1" unique_id=1798010326]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "1,000"
+label_settings = ExtResource("3_kvjq3")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="PlayerSheet/CoinsDisplay/HBoxContainer" unique_id=1135497523]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 2
+
+[node name="TextureRect" type="TextureRect" parent="PlayerSheet/CoinsDisplay/HBoxContainer/MarginContainer2" unique_id=831605329]
+layout_mode = 2
+texture = ExtResource("22_h1kn2")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MainMenuTabGroup" type="HBoxContainer" parent="." unique_id=1079604002]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 2.0
+offset_right = 48.0
+offset_bottom = 15.0
+grow_horizontal = 2
+theme_override_constants/separation = 0
+alignment = 1
+script = ExtResource("23_vcx4h")
+
+[node name="Tab01" parent="MainMenuTabGroup" unique_id=740489947 instance=ExtResource("24_g470i")]
+layout_mode = 2
+
+[node name="Tab02" parent="MainMenuTabGroup" unique_id=1754485244 instance=ExtResource("24_g470i")]
+layout_mode = 2
+active_item_texture = ExtResource("25_03cms")
+inactive_item_texture = ExtResource("26_t11nb")
+
+[node name="Tab03" parent="MainMenuTabGroup" unique_id=1003499113 instance=ExtResource("24_g470i")]
+layout_mode = 2
+active_item_texture = ExtResource("27_r2a3d")
+inactive_item_texture = ExtResource("28_h83cl")
+inactive_item_margins = 1
+
+[node name="Tab04" parent="MainMenuTabGroup" unique_id=1637958741 instance=ExtResource("24_g470i")]
+layout_mode = 2
+active_item_texture = ExtResource("29_jkke2")
+inactive_item_texture = ExtResource("30_80ept")
+
+[node name="Tab05" parent="MainMenuTabGroup" unique_id=1704424194 instance=ExtResource("24_g470i")]
+layout_mode = 2
+active_item_texture = ExtResource("31_cs3jf")
+inactive_item_texture = ExtResource("32_g7l3v")
+inactive_item_margins = 1
+
+[node name="Tab06" parent="MainMenuTabGroup" unique_id=393532747 instance=ExtResource("24_g470i")]
+layout_mode = 2
+active_item_texture = ExtResource("33_1gaup")
+inactive_item_texture = ExtResource("34_kduks")
+
+[node name="CornerDecals" type="Control" parent="." unique_id=1712144087]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CornerLeftTab" type="TextureRect" parent="CornerDecals" unique_id=429017483]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 3.0
+offset_right = 84.0
+offset_bottom = 10.0
+texture = ExtResource("35_17qp0")
+stretch_mode = 2
+
+[node name="CornerRightTab" type="TextureRect" parent="CornerDecals" unique_id=201940269]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 3.0
+offset_right = 189.0
+offset_bottom = 10.0
+texture = ExtResource("36_6tx7i")
+stretch_mode = 2
+
+[node name="CornerNE" type="TextureRect" parent="CornerDecals" unique_id=1302371033]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 3.0
+offset_right = 263.0
+offset_bottom = 10.0
+texture = ExtResource("35_17qp0")
+stretch_mode = 2
+
+[node name="CornerSE" type="TextureRect" parent="CornerDecals" unique_id=1604648533]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 156.0
+offset_right = 263.0
+offset_bottom = 163.0
+texture = ExtResource("37_83c6u")
+stretch_mode = 2
+
+[node name="CornerSW" type="TextureRect" parent="CornerDecals" unique_id=2107627856]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 156.0
+offset_right = 10.0
+offset_bottom = 163.0
+texture = ExtResource("38_1o7fk")
+stretch_mode = 2
+
+[node name="CornerNW" type="TextureRect" parent="CornerDecals" unique_id=2101943730]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 10.0
+offset_bottom = 10.0
+texture = ExtResource("36_6tx7i")
+stretch_mode = 2
+
+[node name="ControlInfo" type="ColorRect" parent="." unique_id=1041694396]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -131.0
+offset_top = -12.0
+offset_right = 131.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.08948135, 0.049478576, 0.037194073, 1)
+
+[connection signal="tab_activated" from="MainMenuTabGroup" to="." method="_tab_activated"]
