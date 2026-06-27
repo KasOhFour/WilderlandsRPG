@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://b4scvcap26254"]
+
+[ext_resource type="Script" uid="uid://hsp2r54ylvj1" path="res://item_stack_2d.gd" id="1_xhjbx"]
+[ext_resource type="Shape2D" uid="uid://nvpeualjdarn" path="res://item_stack_collision_shape_2d.tres" id="2_pyf57"]
+[ext_resource type="Shader" uid="uid://dgn06t6v3p0x3" path="res://blend_mode_multiply.gdshader" id="3_7h51t"]
+[ext_resource type="Texture2D" uid="uid://bklk3p4dsuetj" path="res://assets/model_humanoid_shadow.png" id="4_dw5gn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kjcke"]
+shader = ExtResource("3_7h51t")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
+atlas = ExtResource("4_dw5gn")
+region = Rect2(0, 0, 12, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jxqw"]
+atlas = ExtResource("4_dw5gn")
+region = Rect2(12, 0, 12, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l2qik"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hs0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jxqw")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="ItemStack2D" type="CharacterBody2D" unique_id=121995994]
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+safe_margin = 0.001
+script = ExtResource("1_xhjbx")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1477770872]
+shape = ExtResource("2_pyf57")
+
+[node name="Area" type="Area2D" parent="." unique_id=1327055870]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=1929209354]
+shape = ExtResource("2_pyf57")
+
+[node name="Shadow" type="AnimatedSprite2D" parent="." unique_id=1533283781]
+modulate = Color(0.5, 0.5, 0.5, 1)
+material = SubResource("ShaderMaterial_kjcke")
+position = Vector2(0, 3.6)
+sprite_frames = SubResource("SpriteFrames_l2qik")
+animation = &"run"
+
+[node name="Item" type="Sprite2D" parent="." unique_id=644230727]
+scale = Vector2(0.6, 0.6)
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="." unique_id=967080148]
+
+[connection signal="area_entered" from="Area" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="Area" to="." method="_on_area_exited"]
+[connection signal="body_entered" from="Area" to="." method="_on_body_entered"]

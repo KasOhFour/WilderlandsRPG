@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://bn4sy16ww2q6n"]
+
+[ext_resource type="PackedScene" uid="uid://fknfq8ya4c0" path="res://player_body_2d.tscn" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://1orbdx3ylu3n" path="res://world.gd" id="1_wse8f"]
+[ext_resource type="Texture2D" uid="uid://bap5ghfaodjy3" path="res://assets/Farm.webp" id="2_2u3nc"]
+[ext_resource type="Script" uid="uid://dftamwckk50k4" path="res://palette_container.gd" id="3_aqk2v"]
+[ext_resource type="Script" uid="uid://whxhu86tq1n2" path="res://player_palette_menu.gd" id="3_wse8f"]
+[ext_resource type="Script" uid="uid://iokmd1dqikek" path="res://color_button.gd" id="4_ic0uy"]
+[ext_resource type="Script" uid="uid://cmivivohqr1j8" path="res://palette.gd" id="4_wse8f"]
+[ext_resource type="Resource" uid="uid://cqj5ujvhj7jdp" path="res://assets/palettes/player/mannish_palette.tres" id="5_ic0uy"]
+[ext_resource type="Resource" uid="uid://ddgojdewkrwj2" path="res://assets/palettes/player/fuernan_palette.tres" id="6_k3n1d"]
+[ext_resource type="Resource" uid="uid://bvaht6gyxv36x" path="res://assets/palettes/player/delvani_palette.tres" id="7_2o6r5"]
+[ext_resource type="Resource" uid="uid://ckaswcb3r4i6l" path="res://assets/palettes/player/goblin_palette.tres" id="8_70uel"]
+[ext_resource type="Resource" uid="uid://do1eul37p2ujm" path="res://assets/palettes/player/boreal_palette.tres" id="9_hiqwa"]
+[ext_resource type="PackedScene" uid="uid://b4scvcap26254" path="res://item_stack_2d.tscn" id="13_70uel"]
+[ext_resource type="PackedScene" uid="uid://bk06o62gyogxe" path="res://main_menu.tscn" id="13_udxuc"]
+[ext_resource type="Resource" uid="uid://dtnwusxob76s1" path="res://gold_coin.tres" id="14_2u3nc"]
+[ext_resource type="Script" uid="uid://chy0qe3adkunw" path="res://item_stack.gd" id="14_hiqwa"]
+[ext_resource type="PackedScene" uid="uid://btc0rvbtenj5h" path="res://cursor_layer.tscn" id="14_ikiii"]
+[ext_resource type="Resource" uid="uid://dpn0oyvbbmp3t" path="res://nullcore.tres" id="16_2u3nc"]
+
+[sub_resource type="Resource" id="Resource_2u3nc"]
+script = ExtResource("14_hiqwa")
+item = ExtResource("14_2u3nc")
+count = 8
+max_stack_count_override = 99
+metadata/_custom_type_script = "uid://chy0qe3adkunw"
+
+[sub_resource type="Resource" id="Resource_udxuc"]
+script = ExtResource("14_hiqwa")
+item = ExtResource("16_2u3nc")
+count = 1
+max_stack_count_override = 1
+metadata/_custom_type_script = "uid://chy0qe3adkunw"
+
+[node name="World" type="Node2D" unique_id=246666753]
+script = ExtResource("1_wse8f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1048218526]
+position = Vector2(341.6084, 278.5)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_2u3nc")
+
+[node name="Player" parent="." unique_id=641644182 instance=ExtResource("1_f3sb7")]
+position = Vector2(-67, 45)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1136309635]
+
+[node name="PlayerPaletteMenu" type="VBoxContainer" parent="CanvasLayer" unique_id=624105213]
+offset_right = 160.0
+offset_bottom = 116.0
+script = ExtResource("3_wse8f")
+
+[node name="ScleraPicker" type="HBoxContainer" parent="CanvasLayer/PlayerPaletteMenu" unique_id=2013461932]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/PlayerPaletteMenu/ScleraPicker" unique_id=43714686]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Sclera"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="CanvasLayer/PlayerPaletteMenu/ScleraPicker" unique_id=1570477932]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 1)
+edit_alpha = false
+
+[node name="IrisPicker" type="HBoxContainer" parent="CanvasLayer/PlayerPaletteMenu" unique_id=837697772]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/PlayerPaletteMenu/IrisPicker" unique_id=1181478834]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Iris"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="CanvasLayer/PlayerPaletteMenu/IrisPicker" unique_id=1215886199]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+color = Color(0.0334077, 0.271057, 1, 1)
+
+[node name="SkinPickerPreview" type="HBoxContainer" parent="CanvasLayer/PlayerPaletteMenu" unique_id=2029381447]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/PlayerPaletteMenu/SkinPickerPreview" unique_id=1377561206]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Skin"
+
+[node name="Button" type="Button" parent="CanvasLayer/PlayerPaletteMenu/SkinPickerPreview" unique_id=1508536912]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+script = ExtResource("4_ic0uy")
+metadata/_custom_type_script = "uid://iokmd1dqikek"
+
+[node name="SkinPicker" type="VBoxContainer" parent="CanvasLayer/PlayerPaletteMenu" unique_id=1924946676]
+layout_mode = 2
+script = ExtResource("3_aqk2v")
+palettes = Array[ExtResource("4_wse8f")]([ExtResource("5_ic0uy"), ExtResource("6_k3n1d"), ExtResource("7_2o6r5"), ExtResource("8_70uel"), ExtResource("9_hiqwa")])
+
+[node name="MainMenu" parent="CanvasLayer" unique_id=1797284859 instance=ExtResource("13_udxuc")]
+
+[node name="CursorLayer" parent="CanvasLayer" unique_id=877582386 instance=ExtResource("14_ikiii")]
+
+[node name="ItemStack2D" parent="." unique_id=121995994 instance=ExtResource("13_70uel")]
+item_stack = SubResource("Resource_2u3nc")
+
+[node name="ItemStack2D2" parent="." unique_id=1938868090 instance=ExtResource("13_70uel")]
+position = Vector2(27, -9)
+item_stack = SubResource("Resource_udxuc")
+
+[connection signal="pressed" from="CanvasLayer/PlayerPaletteMenu/SkinPickerPreview/Button" to="CanvasLayer/PlayerPaletteMenu" method="_on_skin_picker_preview_pressed"]

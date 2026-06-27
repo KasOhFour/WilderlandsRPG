@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://im2wr8wmyt34"]
+[gd_resource type="TileSet" format=3 uid="uid://im2wr8wmyt34"]
 
 [ext_resource type="Texture2D" uid="uid://b8jt3ds52p3oy" path="res://assets/island/continental_water.png" id="1_6alt5"]
 [ext_resource type="Texture2D" uid="uid://b8nsyeactq21a" path="res://assets/island/oceanic_water.png" id="2_fjwc2"]

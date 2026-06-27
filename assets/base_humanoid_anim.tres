@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=30 format=3 uid="uid://8h3tj55pqfx8"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://8h3tj55pqfx8"]
 
 [ext_resource type="Texture2D" uid="uid://vds75jq0p5sc" path="res://assets/model_humanoid_sheet8.png" id="1_lk8tp"]
 

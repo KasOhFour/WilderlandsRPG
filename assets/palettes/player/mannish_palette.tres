@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Palette" format=3 uid="uid://cqj5ujvhj7jdp"]
+
+[ext_resource type="Texture2D" uid="uid://nfjg1jcgc44k" path="res://assets/palettes/player/mannish_palette.png" id="1_1t51t"]
+[ext_resource type="Script" uid="uid://cmivivohqr1j8" path="res://palette.gd" id="1_cyt8p"]
+
+[resource]
+script = ExtResource("1_cyt8p")
+name = "Mannish"
+palette_texture = ExtResource("1_1t51t")
+metadata/_custom_type_script = "uid://cmivivohqr1j8"

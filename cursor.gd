@@ -1,4 +1,5 @@
-class_name Cursor extends Control
+class_name Cursor
+extends Control
 
 
 func _ready() -> void:

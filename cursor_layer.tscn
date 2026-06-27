@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://btc0rvbtenj5h"]
+[gd_scene format=3 uid="uid://btc0rvbtenj5h"]
 
 [ext_resource type="Texture2D" uid="uid://161s866gsdpo" path="res://assets/ui/pointer.png" id="1_16by4"]
 [ext_resource type="Script" uid="uid://dsxl61ik147us" path="res://cursor.gd" id="1_hogys"]
 
-[node name="CursorLayer" type="CanvasLayer" groups=["cursor_layer"]]
+[node name="CursorLayer" type="CanvasLayer" unique_id=877582386 groups=["cursor_layer"]]
 
-[node name="Cursor" type="Control" parent="."]
+[node name="Cursor" type="Control" parent="." unique_id=1526684052]
 z_index = 999
 custom_minimum_size = Vector2(6, 6)
 layout_mode = 3
@@ -20,7 +20,7 @@ pivot_offset = Vector2(3, 3)
 mouse_filter = 2
 script = ExtResource("1_hogys")
 
-[node name="Shadow" type="TextureRect" parent="Cursor"]
+[node name="Shadow" type="TextureRect" parent="Cursor" unique_id=564840494]
 modulate = Color(0, 0, 0, 0.588235)
 layout_mode = 1
 anchors_preset = 15
@@ -37,7 +37,7 @@ mouse_filter = 2
 texture = ExtResource("1_16by4")
 expand_mode = 1
 
-[node name="Texture" type="TextureRect" parent="Cursor"]
+[node name="Texture" type="TextureRect" parent="Cursor" unique_id=1596777160]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

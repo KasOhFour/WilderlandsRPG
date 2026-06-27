@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Palette" format=3 uid="uid://bvaht6gyxv36x"]
+
+[ext_resource type="Script" uid="uid://cmivivohqr1j8" path="res://palette.gd" id="1_k0qix"]
+[ext_resource type="Texture2D" uid="uid://bog8g1p03ve50" path="res://assets/palettes/player/delvani_palette.png" id="1_kcmds"]
+
+[resource]
+script = ExtResource("1_k0qix")
+name = "Delvani"
+palette_texture = ExtResource("1_kcmds")
+metadata/_custom_type_script = "uid://cmivivohqr1j8"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bq2p3p11p6xdn"]
+[gd_scene format=3 uid="uid://bq2p3p11p6xdn"]
 
 [ext_resource type="Texture2D" uid="uid://daiuvm8a5mpc4" path="res://assets/ui/tab_inactive.png" id="1_jd5j6"]
 [ext_resource type="Script" uid="uid://imx4hmacvvc4" path="res://main_menu_tab.gd" id="2_6omvg"]
@@ -10,7 +10,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rypwx"]
 shader = ExtResource("5_p7l6v")
 
-[node name="Tab01" type="NinePatchRect"]
+[node name="Tab01" type="NinePatchRect" unique_id=2029974556]
 self_modulate = Color(1, 1, 1, 0.521569)
 custom_minimum_size = Vector2(13, 13)
 anchors_preset = 8
@@ -35,7 +35,7 @@ script = ExtResource("2_6omvg")
 active_item_texture = ExtResource("3_y3vw8")
 inactive_item_texture = ExtResource("3_6omvg")
 
-[node name="ItemShadow" type="Control" parent="."]
+[node name="ItemShadow" type="Control" parent="." unique_id=792048979]
 modulate = Color(0, 0, 0, 0.588235)
 custom_minimum_size = Vector2(9, 9)
 layout_mode = 1
@@ -53,7 +53,7 @@ grow_vertical = 2
 pivot_offset = Vector2(4.5, 4.5)
 mouse_filter = 2
 
-[node name="Margin" type="MarginContainer" parent="ItemShadow"]
+[node name="Margin" type="MarginContainer" parent="ItemShadow" unique_id=1014045930]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,14 +63,14 @@ grow_vertical = 2
 pivot_offset = Vector2(4.5, 4.5)
 mouse_filter = 2
 
-[node name="Item" type="TextureRect" parent="ItemShadow/Margin"]
+[node name="Item" type="TextureRect" parent="ItemShadow/Margin" unique_id=1900379444]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("3_6omvg")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="ItemView" type="Control" parent="."]
+[node name="ItemView" type="Control" parent="." unique_id=154513078]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -84,7 +84,7 @@ grow_vertical = 2
 pivot_offset = Vector2(4.5, 4.5)
 mouse_filter = 2
 
-[node name="Margin" type="MarginContainer" parent="ItemView"]
+[node name="Margin" type="MarginContainer" parent="ItemView" unique_id=1153413878]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,14 +94,14 @@ grow_vertical = 2
 pivot_offset = Vector2(4.5, 4.5)
 mouse_filter = 2
 
-[node name="Item" type="TextureRect" parent="ItemView/Margin"]
+[node name="Item" type="TextureRect" parent="ItemView/Margin" unique_id=306405357]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("3_6omvg")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Ellipses" type="TextureRect" parent="."]
+[node name="Ellipses" type="TextureRect" parent="." unique_id=2112054759]
 material = SubResource("ShaderMaterial_rypwx")
 layout_mode = 1
 anchors_preset = 12

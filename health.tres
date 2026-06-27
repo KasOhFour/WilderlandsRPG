@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EntityStatusGauge" format=3 uid="uid://ccavnxpnda7bg"]
+
+[ext_resource type="Script" uid="uid://7a5myittdosr" path="res://entity_status.gd" id="1_v3h8f"]
+[ext_resource type="Script" uid="uid://dc1wut305d1kn" path="res://entity_status_gauge.gd" id="2_uoxev"]
+
+[sub_resource type="Resource" id="Resource_v3h8f"]
+script = ExtResource("1_v3h8f")
+name = &"health"
+value = 100.0
+
+[sub_resource type="Resource" id="Resource_uoxev"]
+script = ExtResource("1_v3h8f")
+name = &"health_max"
+value = 100.0
+
+[sub_resource type="Resource" id="Resource_el1i1"]
+script = ExtResource("1_v3h8f")
+name = &"health_min"
+
+[resource]
+script = ExtResource("2_uoxev")
+entity_status = SubResource("Resource_v3h8f")
+entity_status_min = SubResource("Resource_el1i1")
+entity_status_max = SubResource("Resource_uoxev")
+metadata/_custom_type_script = "uid://dc1wut305d1kn"

@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://fknfq8ya4c0"]
+
+[ext_resource type="Script" uid="uid://bbslct27ru33r" path="res://player_body_2d.gd" id="1_cn3ar"]
+[ext_resource type="SpriteFrames" uid="uid://d226n7egoffky" path="res://player/assets/default_mask.tres" id="3_2hs0m"]
+[ext_resource type="SpriteFrames" uid="uid://8h3tj55pqfx8" path="res://assets/base_humanoid_anim.tres" id="3_hqtel"]
+[ext_resource type="Texture2D" uid="uid://bklk3p4dsuetj" path="res://assets/model_humanoid_shadow.png" id="4_v6vyt"]
+[ext_resource type="Shader" uid="uid://dgn06t6v3p0x3" path="res://blend_mode_multiply.gdshader" id="6_1jxqw"]
+[ext_resource type="Script" uid="uid://b11l88a1c71mq" path="res://magnetic_field.gd" id="8_dw050"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b26j0"]
+shader = ExtResource("6_1jxqw")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
+atlas = ExtResource("4_v6vyt")
+region = Rect2(0, 0, 12, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jxqw"]
+atlas = ExtResource("4_v6vyt")
+region = Rect2(12, 0, 12, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dw050"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hs0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jxqw")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sweqy"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2hs0m"]
+radius = 60.0
+
+[node name="Player" type="CharacterBody2D" unique_id=388695582 groups=["player"]]
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_cn3ar")
+mask_frames = ExtResource("3_2hs0m")
+
+[node name="Frames" type="AnimatedSprite2D" parent="." unique_id=1555251824]
+z_index = 1
+sprite_frames = ExtResource("3_hqtel")
+animation = &"idle_south"
+frame_progress = 0.59871477
+speed_scale = 0.55
+
+[node name="Shadow" type="AnimatedSprite2D" parent="." unique_id=396216520]
+modulate = Color(0.5019608, 0.5019608, 0.5019608, 1)
+material = SubResource("ShaderMaterial_b26j0")
+position = Vector2(0, 20)
+sprite_frames = SubResource("SpriteFrames_dw050")
+animation = &"run"
+
+[node name="Camera" type="Camera2D" parent="." unique_id=44790577]
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1938329836]
+position = Vector2(0, 14)
+shape = SubResource("CircleShape2D_sweqy")
+
+[node name="MagneticField" type="Area2D" parent="." unique_id=1189096366]
+position = Vector2(0, 14)
+collision_mask = 2
+script = ExtResource("8_dw050")
+
+[node name="Collision" type="CollisionShape2D" parent="MagneticField" unique_id=477528230]
+shape = SubResource("CircleShape2D_2hs0m")
+
+[connection signal="frame_changed" from="Frames" to="." method="_on_player_animation_frame_changed"]

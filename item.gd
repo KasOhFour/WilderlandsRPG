@@ -2,8 +2,21 @@
 class_name Item
 extends Resource
 
-enum MaxStackCount { UNSTACKABLE = 1, SMALL = 9, NORMAL = 99, LARGE = 999 }
-enum Rarity { COMMON = 0xffffff, UNCOMMON = 0x6464ff, RARE = 0x64ff64, EPIC = 0xff6464, STORY = 0xffd33d }
+enum MaxStackCount {
+	UNDEFINED = 0,
+	UNSTACKABLE = 1,
+	SMALL = 9,
+	NORMAL = 99,
+	LARGE = 999,
+	UNLIMITED = int(INF),
+}
+enum Rarity {
+	COMMON = 0xffffff,
+	UNCOMMON = 0x6464ff,
+	RARE = 0x64ff64,
+	EPIC = 0xff6464,
+	STORY = 0xffd33d,
+}
 
 @export var id := -1
 @export var name: String
@@ -11,6 +24,7 @@ enum Rarity { COMMON = 0xffffff, UNCOMMON = 0x6464ff, RARE = 0x64ff64, EPIC = 0x
 @export var texture := default_texture()
 @export var margins: int
 @export var max_stack_count := Item.MaxStackCount.UNSTACKABLE
+
 
 static func default_texture() -> Texture2D:
 	var image := Image.create(1, 1, false, Image.FORMAT_RGBA8)

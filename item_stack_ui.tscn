@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://c1ldrnms83c56"]
+
+[ext_resource type="Script" uid="uid://bn58jfx5e5ppc" path="res://item_stack_ui.gd" id="1_4eog7"]
+[ext_resource type="Texture2D" uid="uid://cdg3g1r83vyul" path="res://assets/ui/gold_coin.png" id="2_htb3m"]
+
+[node name="ItemStackUI" type="Control" unique_id=431144896]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_4eog7")
+
+[node name="Shadow" type="Control" parent="." unique_id=1668124992]
+modulate = Color(0, 0, 0, 0.588235)
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Margins" type="MarginContainer" parent="Shadow" unique_id=1899148104]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(7, 7)
+mouse_filter = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Texture" type="TextureRect" parent="Shadow/Margins" unique_id=182803678]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_htb3m")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Count" type="Label" parent="Shadow" unique_id=1587986782]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 12.0
+offset_right = 15.0
+offset_bottom = 17.3
+theme_override_font_sizes/font_size = 3
+text = "99"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Item" type="Control" parent="." unique_id=1917415070]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Margins" type="MarginContainer" parent="Item" unique_id=1382784220]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(7, 7)
+mouse_filter = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Texture" type="TextureRect" parent="Item/Margins" unique_id=2000780728]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_htb3m")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Count" type="Label" parent="Item" unique_id=104654771]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 12.0
+offset_right = 15.0
+offset_bottom = 18.0
+theme_override_font_sizes/font_size = 3
+text = "99"
+horizontal_alignment = 2
+vertical_alignment = 1
