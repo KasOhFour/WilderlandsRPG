@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://vqf368j8pxpr"]
+
+[ext_resource type="Script" uid="uid://b4aosidv70alg" path="res://assets/region_2d.gd" id="1_sb31k"]
+[ext_resource type="TileSet" uid="uid://cmtdnvoq4scsb" path="res://assets/ground_tileset.tres" id="2_w8wbj"]
+[ext_resource type="PackedScene" uid="uid://rf5dm2j2mhcr" path="res://interactive_camera_2d.tscn" id="3_w8wbj"]
+[ext_resource type="TileSet" uid="uid://c1ta5chtmpjbc" path="res://assets/terrain.tres" id="3_yy0xi"]
+[ext_resource type="Shader" uid="uid://dgn06t6v3p0x3" path="res://blend_mode_multiply.gdshader" id="4_noik4"]
+[ext_resource type="Shader" uid="uid://ckt3voas15qn5" path="res://blend_mode_overlay.gdshader" id="4_u0w04"]
+[ext_resource type="PackedScene" uid="uid://fknfq8ya4c0" path="res://player_body_2d.tscn" id="7_ajhs6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_noik4"]
+shader = ExtResource("4_u0w04")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u0w04"]
+shader = ExtResource("4_noik4")
+
+[node name="Region2D" type="Node2D" unique_id=1828231688]
+script = ExtResource("1_sb31k")
+
+[node name="GroundTMLayer" type="TileMapLayer" parent="." unique_id=1936303326]
+tile_set = ExtResource("2_w8wbj")
+
+[node name="GrassTMLayer" type="TileMapLayer" parent="." unique_id=216251916]
+tile_set = ExtResource("3_yy0xi")
+
+[node name="GrassShader00TMLayer" type="TileMapLayer" parent="." unique_id=2094808543]
+visible = false
+modulate = Color(0.7, 0.7, 0.7, 1)
+material = SubResource("ShaderMaterial_noik4")
+tile_set = ExtResource("3_yy0xi")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=113539111]
+copy_mode = 2
+
+[node name="GrassShader01TMLayer" type="TileMapLayer" parent="." unique_id=360086861]
+modulate = Color(0.74, 0.74, 0.74, 1)
+material = SubResource("ShaderMaterial_u0w04")
+tile_set = ExtResource("3_yy0xi")
+
+[node name="BackBufferCopy2" type="BackBufferCopy" parent="." unique_id=1505322121]
+copy_mode = 2
+
+[node name="TopGrassTMLayer" type="TileMapLayer" parent="." unique_id=1077317979]
+tile_set = ExtResource("3_yy0xi")
+
+[node name="BackBufferCopy3" type="BackBufferCopy" parent="." unique_id=858829402]
+copy_mode = 2
+
+[node name="TopGrassShader00TMLayer" type="TileMapLayer" parent="." unique_id=40802743]
+modulate = Color(0.64, 0.64, 0.64, 1)
+material = SubResource("ShaderMaterial_u0w04")
+tile_set = ExtResource("3_yy0xi")
+
+[node name="GrassPatches" type="Node2D" parent="." unique_id=1788789433]
+y_sort_enabled = true
+
+[node name="MultiMeshInstance2D" type="MultiMeshInstance2D" parent="." unique_id=1897401938]
+visible = false
+
+[node name="Camera2D" parent="." unique_id=1964796022 instance=ExtResource("3_w8wbj")]
+
+[node name="Player" parent="." unique_id=388695582 instance=ExtResource("7_ajhs6")]

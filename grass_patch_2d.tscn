@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://baw1fmhlmyk4e"]
+
+[ext_resource type="Script" uid="uid://b6u8047yslf7g" path="res://grass_patch_2d.gd" id="1_3yp1t"]
+[ext_resource type="Texture2D" uid="uid://dpdaqo2sihhnp" path="res://assets/grass_patch_large.png" id="1_idgw3"]
+[ext_resource type="Material" uid="uid://divc61ferm3ly" path="res://grass_patch_material.tres" id="3_qqo7b"]
+
+[node name="GrassPatch2D" type="Sprite2D" unique_id=40690272]
+process_mode = 4
+physics_interpolation_mode = 2
+y_sort_enabled = true
+material = ExtResource("3_qqo7b")
+texture = ExtResource("1_idgw3")
+script = ExtResource("1_3yp1t")

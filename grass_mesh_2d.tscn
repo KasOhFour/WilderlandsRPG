@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://hqinirydbnyy"]
+
+[ext_resource type="Script" uid="uid://cf3yyenqcco8q" path="res://grass_mesh_2d.gd" id="1_fqjj6"]
+
+[node name="GrassMesh2D" type="Node2D" unique_id=797849691]
+script = ExtResource("1_fqjj6")
+
+[node name="MultiMeshInstance2D" type="MultiMeshInstance2D" parent="." unique_id=723889273]
