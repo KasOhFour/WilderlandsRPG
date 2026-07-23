@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://fknfq8ya4c0" path="res://player_body_2d.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://1orbdx3ylu3n" path="res://world.gd" id="1_wse8f"]
 [ext_resource type="Texture2D" uid="uid://bap5ghfaodjy3" path="res://assets/Farm.webp" id="2_2u3nc"]
+[ext_resource type="TileSet" uid="uid://cmtdnvoq4scsb" path="res://assets/ground_tileset.tres" id="2_il2jm"]
 [ext_resource type="Script" uid="uid://dftamwckk50k4" path="res://palette_container.gd" id="3_aqk2v"]
 [ext_resource type="Script" uid="uid://whxhu86tq1n2" path="res://player_palette_menu.gd" id="3_wse8f"]
 [ext_resource type="Script" uid="uid://iokmd1dqikek" path="res://color_button.gd" id="4_ic0uy"]
@@ -42,6 +43,11 @@ shader = ExtResource("20_bc84e")
 
 [node name="World" type="Node2D" unique_id=246666753]
 script = ExtResource("1_wse8f")
+
+[node name="GroundLayer" type="TileMapLayer" parent="." unique_id=712228141]
+tile_set = ExtResource("2_il2jm")
+collision_enabled = false
+navigation_enabled = false
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1048218526]
 position = Vector2(341.6084, 278.5)

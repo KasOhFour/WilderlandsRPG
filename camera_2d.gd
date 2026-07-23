@@ -35,5 +35,5 @@ func _input(event):
 	# --- Drag pan ---
 	elif event is InputEventMouseMotion and dragging:
 		var delta = event.position - last_mouse_pos
-		position -= delta * zoom
+		position -= delta / zoom
 		last_mouse_pos = event.position

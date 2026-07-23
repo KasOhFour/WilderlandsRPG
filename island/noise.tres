@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="IslandNoise" load_steps=5 format=3 uid="uid://3yet3ryn1rx0"]
+[gd_resource type="Resource" script_class="IslandNoise" format=3 uid="uid://3yet3ryn1rx0"]
 
 [ext_resource type="Script" uid="uid://dg0e6s84ibqaf" path="res://island/IslandNoise.gd" id="1_4nyrb"]
 

@@ -28,7 +28,6 @@ window/size/viewport_height=270
 window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-window/vsync/vsync_mode=0
 mouse_cursor/custom_image="uid://161s866gsdpo"
 
 [editor_plugins]

@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://divc61ferm3ly"]
+
+[ext_resource type="Shader" uid="uid://bkbewkf3et2h7" path="res://grass_patch_shader.gdshader" id="1_n8yig"]
+
+[resource]
+shader = ExtResource("1_n8yig")
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/tint_strength = 0.33
