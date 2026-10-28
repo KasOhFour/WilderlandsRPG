@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://wm3iofnrhuy0" path="res://assets/ui/display_special.png" id="14_dfeea"]
 [ext_resource type="Texture2D" uid="uid://cmcfep5hrc480" path="res://assets/ui/claw_decal_left.png" id="15_kojkm"]
 [ext_resource type="Texture2D" uid="uid://cuvv5ilgijxgj" path="res://assets/ui/claw_decal_right.png" id="16_m3v73"]
-[ext_resource type="Script" uid="uid://dr8hukg326avf" path="res://inventory_grid.gd" id="17_ivaxt"]
+[ext_resource type="Script" uid="uid://dr8hukg326avf" path="res://inventory_ui.gd" id="17_ivaxt"]
 [ext_resource type="PackedScene" uid="uid://cfsewc4go45xo" path="res://inventory_slot.tscn" id="18_ia58x"]
 [ext_resource type="Texture2D" uid="uid://3p7cgd2tns6b" path="res://assets/ui/chain_decal_top.png" id="19_f6p64"]
 [ext_resource type="Texture2D" uid="uid://du7buqjjch3sw" path="res://assets/ui/display_unique.png" id="20_1gtdl"]
@@ -545,7 +545,7 @@ offset_top = 96.0
 offset_right = 248.0
 offset_bottom = 160.0
 
-[node name="Inventory" type="GridContainer" parent="PlayerSheet/InventorySlotDisplay" unique_id=648714805]
+[node name="InventoryUI" type="GridContainer" parent="PlayerSheet/InventorySlotDisplay" unique_id=648714805]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -558,124 +558,124 @@ theme_override_constants/v_separation = 2
 columns = 10
 script = ExtResource("17_ivaxt")
 
-[node name="InventorySlot00" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1032030837 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot00" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1032030837 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot01" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=714463870 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot01" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=714463870 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot02" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=124229903 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot02" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=124229903 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot03" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=579520089 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot03" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=579520089 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot04" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1107857813 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot04" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1107857813 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot05" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=307151439 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot05" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=307151439 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot06" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=469748236 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot06" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=469748236 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot07" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1189733973 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot07" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1189733973 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot08" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=411156244 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot08" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=411156244 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot09" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=819122934 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot09" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=819122934 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot10" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=286659151 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot10" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=286659151 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot11" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=91844591 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot11" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=91844591 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot12" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1473368530 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot12" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1473368530 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot13" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1021444449 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot13" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1021444449 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot14" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=648629430 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot14" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=648629430 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot15" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1423978546 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot15" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1423978546 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot16" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1847208999 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot16" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1847208999 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot17" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=333169545 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot17" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=333169545 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot18" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=854901360 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot18" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=854901360 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot19" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=243991465 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot19" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=243991465 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot20" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=752445645 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot20" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=752445645 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot21" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1233442112 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot21" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1233442112 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot22" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=881955869 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot22" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=881955869 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot23" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1378686946 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot23" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1378686946 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot24" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=836653951 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot24" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=836653951 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot25" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=94571920 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot25" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=94571920 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot26" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1389459221 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot26" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1389459221 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot27" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=462206949 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot27" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=462206949 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot28" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=592867694 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot28" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=592867694 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot29" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1122250073 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot29" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1122250073 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot30" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1728665378 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot30" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1728665378 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot31" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1004278162 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot31" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1004278162 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot32" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1658983046 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot32" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1658983046 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot33" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=541538403 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot33" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=541538403 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot34" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1207094061 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot34" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1207094061 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot35" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=473095297 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot35" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=473095297 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot36" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=249102278 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot36" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=249102278 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot37" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1907433899 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot37" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1907433899 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot38" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1341388445 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot38" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1341388445 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
-[node name="InventorySlot39" parent="PlayerSheet/InventorySlotDisplay/Inventory" unique_id=1701787465 instance=ExtResource("18_ia58x")]
+[node name="InventorySlot39" parent="PlayerSheet/InventorySlotDisplay/InventoryUI" unique_id=1701787465 instance=ExtResource("18_ia58x")]
 layout_mode = 2
 
 [node name="SpellBookDisplay" type="Control" parent="PlayerSheet" unique_id=316296347]

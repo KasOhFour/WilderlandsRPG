@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://fknfq8ya4c0"]
 
-[ext_resource type="Script" uid="uid://bbslct27ru33r" path="res://player_body_2d.gd" id="1_cn3ar"]
+[ext_resource type="Script" uid="uid://bbslct27ru33r" path="res://player.gd" id="1_cn3ar"]
 [ext_resource type="SpriteFrames" uid="uid://d226n7egoffky" path="res://player/assets/default_mask.tres" id="3_2hs0m"]
 [ext_resource type="SpriteFrames" uid="uid://8h3tj55pqfx8" path="res://assets/base_humanoid_anim.tres" id="3_hqtel"]
 [ext_resource type="Texture2D" uid="uid://bklk3p4dsuetj" path="res://assets/model_humanoid_shadow.png" id="4_v6vyt"]
 [ext_resource type="Shader" uid="uid://dgn06t6v3p0x3" path="res://blend_mode_multiply.gdshader" id="6_1jxqw"]
+[ext_resource type="Script" uid="uid://cwbywu1obaeod" path="res://interaction_area.gd" id="7_1jxqw"]
 [ext_resource type="Script" uid="uid://b11l88a1c71mq" path="res://magnetic_field.gd" id="8_dw050"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b26j0"]
@@ -38,6 +39,9 @@ radius = 6.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_2hs0m"]
 radius = 60.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw050"]
+size = Vector2(16, 16)
+
 [node name="Player" type="CharacterBody2D" unique_id=388695582 groups=["player"]]
 collision_mask = 2
 motion_mode = 1
@@ -58,18 +62,24 @@ position = Vector2(0, 20)
 sprite_frames = SubResource("SpriteFrames_dw050")
 animation = &"run"
 
-[node name="Camera" type="Camera2D" parent="." unique_id=44790577]
-
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1938329836]
-position = Vector2(0, 14)
+position = Vector2(0, 16)
 shape = SubResource("CircleShape2D_sweqy")
 
 [node name="MagneticField" type="Area2D" parent="." unique_id=1189096366]
-position = Vector2(0, 14)
+position = Vector2(0, 16)
 collision_mask = 2
 script = ExtResource("8_dw050")
 
 [node name="Collision" type="CollisionShape2D" parent="MagneticField" unique_id=477528230]
 shape = SubResource("CircleShape2D_2hs0m")
+debug_color = Color(0, 0, 0, 0.41960785)
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=510961597]
+script = ExtResource("7_1jxqw")
+
+[node name="Projection" type="CollisionShape2D" parent="InteractionArea" unique_id=2001386484]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_dw050")
 
 [connection signal="frame_changed" from="Frames" to="." method="_on_player_animation_frame_changed"]

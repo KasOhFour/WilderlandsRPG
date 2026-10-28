@@ -2,6 +2,8 @@
 class_name Region2D
 extends Node2D
 
+@onready var camera := $Camera2D
+
 #const TILE_WEIGHTS := [
 	#60.0,
 	#0.0,
@@ -49,6 +51,12 @@ const GRASS_PATCH := preload('res://grass_patch_2d.tscn')
 
 
 func _ready() -> void:
+	camera.bounds = Rect2(
+		position.x,
+		position.y,
+		X * 16,
+		Y * 16,
+	)
 	var total_weight: float = TILE_WEIGHTS.reduce(
 		func(accum, weight):
 			return accum + weight,
@@ -106,6 +114,9 @@ func _ready() -> void:
 			var atlas2 = DualGrid.ATLAS[mask2] + Vector2i(offset2, 0)
 			$TopGrassTMLayer.set_cell(Vector2i(x, y), 5, atlas2)
 			$TopGrassShader00TMLayer.set_cell(Vector2i(x, y), 6, atlas2)
+
+	Game.add_or_parent_player(self)
+	camera.focus = Game.player
 
 
 class CornerMap:

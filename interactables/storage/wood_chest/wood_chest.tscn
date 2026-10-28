@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cl7c7dk41blcu"]
+
+[ext_resource type="SpriteFrames" uid="uid://pimpn2tcglql" path="res://interactables/storage/wood_chest/wood_chest.sf.tres" id="1_cp6pm"]
+[ext_resource type="Script" uid="uid://c2t3h6mb42aui" path="res://interactables/storage/wood_chest/wood_chest.gd" id="1_fcxso"]
+[ext_resource type="Texture2D" uid="uid://dfmxnupdlh625" path="res://interactables/storage/wood_chest/wood_chest.png" id="1_rw3yb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcxso"]
+size = Vector2(16, 16)
+
+[node name="WoodChest" type="Area2D" unique_id=903954338 groups=["chest", "interactable"]]
+script = ExtResource("1_fcxso")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=596845891]
+texture = ExtResource("1_rw3yb")
+offset = Vector2(8, 6)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=642243303]
+sprite_frames = ExtResource("1_cp6pm")
+animation = &"open"
+speed_scale = 6.0
+offset = Vector2(8, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=463034366]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_fcxso")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
