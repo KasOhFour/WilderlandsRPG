@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 	var scale_to := NORMAL_SCALE
 
 	if is_hovered:
+		print('hovered')
 		alpha_to = HIGHLIGHT_ALPHA
 		scale_to = HOVERED_SCALE
 	self_modulate.a = lerp(self_modulate.a, alpha_to, LERP_SPEED * delta)

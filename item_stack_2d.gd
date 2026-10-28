@@ -116,8 +116,8 @@ func _on_area_exited(exited: Area2D) -> void:
 
 
 func _on_body_entered(entered: Node2D) -> void:
-	if entered is PlayerBody2D:
-		entered.player.inventory.fill_inventory(item_stack.item, item_stack.count)
+	if entered is Player:
+		entered.inventory.fill_inventory(item_stack.item, item_stack.count)
 		queue_free()
 
 

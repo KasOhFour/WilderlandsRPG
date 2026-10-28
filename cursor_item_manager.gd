@@ -57,6 +57,7 @@ func _reparent(orphan: ItemStackUI) -> void:
 
 	var cursor_layer := get_tree().get_first_node_in_group('cursor_layer')
 	if not cursor_layer:
+		Game.gui.add_child(isui)
 		return
 
 	cursor_layer.add_child(isui)

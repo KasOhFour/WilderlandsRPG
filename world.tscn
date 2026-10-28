@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bn4sy16ww2q6n"]
 
-[ext_resource type="PackedScene" uid="uid://fknfq8ya4c0" path="res://player_body_2d.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://fknfq8ya4c0" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://1orbdx3ylu3n" path="res://world.gd" id="1_wse8f"]
 [ext_resource type="Texture2D" uid="uid://bap5ghfaodjy3" path="res://assets/Farm.webp" id="2_2u3nc"]
 [ext_resource type="TileSet" uid="uid://cmtdnvoq4scsb" path="res://assets/ground_tileset.tres" id="2_il2jm"]
@@ -23,6 +23,7 @@
 [ext_resource type="Shader" uid="uid://dgn06t6v3p0x3" path="res://blend_mode_multiply.gdshader" id="20_bc84e"]
 [ext_resource type="Texture2D" uid="uid://b4c3hhudckwox" path="res://assets/tree_shadow.png" id="21_wukud"]
 [ext_resource type="PackedScene" uid="uid://dauw6t3a6m6wp" path="res://tree_test.tscn" id="22_wukud"]
+[ext_resource type="PackedScene" uid="uid://cl7c7dk41blcu" path="res://interactables/storage/wood_chest/wood_chest.tscn" id="24_wjb0r"]
 
 [sub_resource type="Resource" id="Resource_2u3nc"]
 script = ExtResource("14_hiqwa")
@@ -59,6 +60,7 @@ position = Vector2(-67, 45)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1136309635]
 
 [node name="PlayerPaletteMenu" type="VBoxContainer" parent="CanvasLayer" unique_id=624105213]
+visible = false
 offset_right = 160.0
 offset_bottom = 116.0
 script = ExtResource("3_wse8f")
@@ -177,5 +179,8 @@ texture = ExtResource("19_cbp6q")
 
 [node name="Tree" parent="." unique_id=726584610 instance=ExtResource("22_wukud")]
 position = Vector2(-104, 66)
+
+[node name="WoodChest" parent="." unique_id=903954338 instance=ExtResource("24_wjb0r")]
+position = Vector2(179, 128)
 
 [connection signal="pressed" from="CanvasLayer/PlayerPaletteMenu/SkinPickerPreview/Button" to="CanvasLayer/PlayerPaletteMenu" method="_on_skin_picker_preview_pressed"]

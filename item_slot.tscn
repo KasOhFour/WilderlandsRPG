@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ce81avqmurkur"]
+
+[ext_resource type="StyleBox" uid="uid://jes4stiuk0m3" path="res://basic_panel.tres" id="2_7v0y0"]
+[ext_resource type="Script" uid="uid://cm07mw4ryc3xg" path="res://item_slot.gd" id="2_i83bl"]
+[ext_resource type="PackedScene" uid="uid://c1ldrnms83c56" path="res://item_stack_ui.tscn" id="3_qa65c"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qo4iv"]
+blend_mode = 1
+
+[node name="ItemSlot0" type="Control" unique_id=1382976257]
+self_modulate = Color(1, 1, 1, 0.529412)
+material = SubResource("CanvasItemMaterial_qo4iv")
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_i83bl")
+
+[node name="Panel" type="Panel" parent="." unique_id=1273165201]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_7v0y0")
+
+[node name="ItemStackUI" parent="." unique_id=431144896 instance=ExtResource("3_qa65c")]
+layout_mode = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
