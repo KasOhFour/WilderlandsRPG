@@ -3,7 +3,7 @@
 class_name EntityStatusEffect
 extends Resource
 
-const DEFAULT_NAME := &''
+const DEFAULT_NAME := &""
 const DEFAULT_DELTA := 0.00
 const DEFAULT_MODIFIERS: Array[EntityStatusModifier] = []
 const DEFAULT_PROC_DELTA := 0.00

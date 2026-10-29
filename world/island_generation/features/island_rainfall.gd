@@ -15,7 +15,7 @@ func apply(island: Island) -> void:
 	var queue: Array[Vector3i] = []
 	for y in height:
 		for x in width:
-			var tile: Island.Tile = island.get_data(x, y, 'island_map')
+			var tile: Island.Tile = island.get_data(x, y, "island_map")
 			if tile in island.RAINFALL_WEIGHTS:
 				var rainfall_weight: int = island.RAINFALL_WEIGHTS[tile]
 				queue.append(Vector3i(x, y, rainfall_weight))

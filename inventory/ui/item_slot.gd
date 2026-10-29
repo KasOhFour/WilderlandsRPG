@@ -54,8 +54,8 @@ func _animate_highlight() -> void:
 	if _tween:
 		_tween.kill()
 	_tween = create_tween().set_parallel().set_ease(Tween.EASE_OUT)
-	_tween.tween_property(panel, 'self_modulate:a', alpha_to, TWEEN_DURATION)
-	_tween.tween_property(isui, 'item_scale', scale_to, TWEEN_DURATION)
+	_tween.tween_property(panel, "self_modulate:a", alpha_to, TWEEN_DURATION)
+	_tween.tween_property(isui, "item_scale", scale_to, TWEEN_DURATION)
 
 
 func _gui_input(event: InputEvent) -> void:

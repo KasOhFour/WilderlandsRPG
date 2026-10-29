@@ -8,7 +8,7 @@ func apply(island: Island) -> void:
 	var water_cardinals := PackedVector3Array()
 	for y in height:
 		for x in width:
-			var tile: Island.Tile = island.get_data(x, y, 'island_map')
+			var tile: Island.Tile = island.get_data(x, y, "island_map")
 			if !island.is_tile_water(tile) or tile == Island.Tile.DEEP_OCEAN:
 				continue
 
@@ -20,7 +20,7 @@ func apply(island: Island) -> void:
 				if dx < 0 or dy < 0 or dx >= width or dy >= height:
 					continue
 
-				var cardinal_tile: Island.Tile = island.get_data(dx, dy, 'island_map')
+				var cardinal_tile: Island.Tile = island.get_data(dx, dy, "island_map")
 				if island.is_tile_water(cardinal_tile) and cardinal_tile != Island.Tile.DEEP_OCEAN:
 					has_cardinal = true
 					break
@@ -30,7 +30,7 @@ func apply(island: Island) -> void:
 
 			var cardinal: Vector2i = Directions.CARDINAL[Random.seeded_randi(
 				island.input_seed,
-				['cardinals[%d][%d]' % [x, y], island.position()],
+				["cardinals[%d][%d]" % [x, y], island.position()],
 			) % Directions.CARDINAL.size()]
 			var water_cardinal: Vector3i = Vector3i(cardinal.x, cardinal.y, tile)
 

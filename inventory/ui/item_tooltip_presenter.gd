@@ -2,7 +2,7 @@ class_name ItemTooltipPresenter
 extends RefCounted
 ## Shows and dismisses the item tooltip on the cursor layer.
 
-const ITEM_TOOLTIP := preload('res://inventory/ui/item_tooltip.tscn')
+const ITEM_TOOLTIP := preload("res://inventory/ui/item_tooltip.tscn")
 
 var _tooltip: Node
 
@@ -13,7 +13,7 @@ func show_for(item_stack: ItemStack, context: Node) -> void:
 	if not item_stack or item_stack.is_empty():
 		return
 
-	var cursor_layer := context.get_tree().get_first_node_in_group('cursor_layer')
+	var cursor_layer := context.get_tree().get_first_node_in_group("cursor_layer")
 
 	if not cursor_layer:
 		return

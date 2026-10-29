@@ -55,7 +55,7 @@ const RAINFALL_WEIGHTS := {
 }
 
 var input_seed := 0
-var noise := load('res://world/island_generation/noise.tres')
+var noise := load("res://world/island_generation/noise.tres")
 var _parameters := Parameters.new()
 var _overrides := Parameters.new()
 var _force_generation := true
@@ -151,21 +151,21 @@ func generate() -> void:
 	_water_corner_map.resize(_parameters.width, _parameters.height)
 	for y in _parameters.height:
 		for x in _parameters.width:
-			var tile: Tile = get_data(x, y, 'island_map')
+			var tile: Tile = get_data(x, y, "island_map")
 			if is_tile_water(tile):
 				_water_corner_map.add_corners(x, y, tile)
 
 	_land_corner_map.resize(_parameters.width, _parameters.height)
 	for y in _parameters.height:
 		for x in _parameters.width:
-			var tile: Tile = get_data(x, y, 'island_map')
+			var tile: Tile = get_data(x, y, "island_map")
 			if !is_tile_water(tile) and tile != Tile.COASTLINE:
 				_land_corner_map.add_corners(x, y, tile)
 
 	_mountain_corner_map.resize(_parameters.width, _parameters.height)
 	for y in _parameters.height:
 		for x in _parameters.width:
-			var tile: Tile = get_data(x, y, 'island_map')
+			var tile: Tile = get_data(x, y, "island_map")
 			if tile == Tile.MOUNTAIN:
 				_mountain_corner_map.add_corners(x, y, tile)
 
@@ -238,7 +238,7 @@ func is_tile_water(tile: Tile) -> bool:
 
 
 func has_downhill_neighbor(x: int, y: int) -> bool:
-	var depth: float = get_data(x, y, 'depth_map')
+	var depth: float = get_data(x, y, "depth_map")
 	for oy in [-1, 0, 1]:
 		for ox in [-1, 0, 1]:
 			if ox == 0 and oy == 0:
@@ -247,7 +247,7 @@ func has_downhill_neighbor(x: int, y: int) -> bool:
 			var ny: int = y + oy
 			if nx < 0 or nx >= width() or ny < 0 or ny >= height():
 				continue
-			if get_data(nx, ny, 'depth_map') < depth:
+			if get_data(nx, ny, "depth_map") < depth:
 				return true
 	return false
 
@@ -285,8 +285,8 @@ func _resolve_parameters() -> void:
 	)
 
 	const dimensions := [
-		'width',
-		'height',
+		"width",
+		"height",
 	]
 	for dimension in dimensions:
 		_parameters[dimension] = (
@@ -299,7 +299,7 @@ func _resolve_parameters() -> void:
 				MAX_STEPS,
 			) * TILES_PER_STEP
 		)
-		print(dimension, ': ', _parameters[dimension])
+		print(dimension, ": ", _parameters[dimension])
 
 	_parameters.falloff_curve = (
 		_overrides.falloff_curve
@@ -308,14 +308,14 @@ func _resolve_parameters() -> void:
 	)
 
 	const frequencies := [
-		'mountain',
-		'river',
-		'lake',
-		'forest',
-		'biome',
+		"mountain",
+		"river",
+		"lake",
+		"forest",
+		"biome",
 	]
 	for frequency in frequencies:
-		frequency += '_frequency'
+		frequency += "_frequency"
 		_parameters[frequency] = (
 			_overrides[frequency]
 			if !is_nan(_overrides[frequency])
@@ -325,7 +325,7 @@ func _resolve_parameters() -> void:
 	_parameters.axis = (
 		_overrides.axis
 		if _overrides.axis != Axis.UNDEFINED
-		else Random.seeded_randi(input_seed, ['axis', _parameters.position], 1, Axis.size() - 1)
+		else Random.seeded_randi(input_seed, ["axis", _parameters.position], 1, Axis.size() - 1)
 	)
 
 	if _overrides.biomes[0] != Biome.UNDEFINED:
@@ -334,7 +334,7 @@ func _resolve_parameters() -> void:
 		var defined_biomes := Biome.values().slice(1)
 		var i := Random.seeded_randi(
 			input_seed,
-			['biomes[0]', _parameters.position],
+			["biomes[0]", _parameters.position],
 		) % defined_biomes.size()
 		_parameters.biomes[0] = defined_biomes[i]
 		if _parameters.biome_frequency > 0.5:
@@ -342,7 +342,7 @@ func _resolve_parameters() -> void:
 				-1
 				if Random.seeded_randf(
 					input_seed,
-					['biomes[1]', _parameters.position],
+					["biomes[1]", _parameters.position],
 					0.0,
 					1.0,
 				) < 0.5

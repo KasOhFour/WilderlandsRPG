@@ -3,8 +3,8 @@ extends NinePatchRect
 
 signal activated(tab: MainMenuTab)
 
-const ACTIVE_TEXTURE := preload('res://ui/art/tab_active.png')
-const INACTIVE_TEXTURE := preload('res://ui/art/tab_inactive.png')
+const ACTIVE_TEXTURE := preload("res://ui/art/tab_active.png")
+const INACTIVE_TEXTURE := preload("res://ui/art/tab_inactive.png")
 const ACTIVE_ITEM_Y_OFFSET := -4.0
 const INACTIVE_ITEM_Y_OFFSET := 0.0
 const HIGHLIGHT_ALPHA := 1.00
@@ -27,8 +27,8 @@ const LERP_SPEED := 30.0
 
 		var item_margins := active_item_margins if _is_active else inactive_item_margins
 		for margin: MarginContainer in margins:
-			for side: String in ['left', 'top', 'right', 'bottom']:
-				margin.add_theme_constant_override('margin_%s' % side, item_margins)
+			for side: String in ["left", "top", "right", "bottom"]:
+				margin.add_theme_constant_override("margin_%s" % side, item_margins)
 	get:
 		return _is_active
 @export var active_item_texture: Texture2D

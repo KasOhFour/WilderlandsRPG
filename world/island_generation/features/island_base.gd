@@ -8,7 +8,7 @@ func apply(island: Island) -> void:
 	for y in height:
 		for x in width:
 			for threshold in island.TILE_THRESHOLDS.keys():
-				if island.get_data(x, y, 'depth_map') < threshold:
+				if island.get_data(x, y, "depth_map") < threshold:
 					var tile: Island.Tile = island.TILE_THRESHOLDS[threshold]
 					island.set_data(x, y, Island.Layer.TILE, tile)
 					break

@@ -39,9 +39,9 @@ func _init(
 	if not entity_status:
 		entity_status = EntityStatus.new(_name, _value, _rounding)
 	if not entity_status_min:
-		entity_status_min = EntityStatus.new('%s_min' % _name, _value_min, _rounding)
+		entity_status_min = EntityStatus.new("%s_min" % _name, _value_min, _rounding)
 	if not entity_status_max:
-		entity_status_max = EntityStatus.new('%s_max' % _name, _value_max, _rounding)
+		entity_status_max = EntityStatus.new("%s_max" % _name, _value_max, _rounding)
 	_connect_once(entity_status.value_changed, _on_value_changed)
 	_connect_once(entity_status_min.value_changed, _on_value_min_changed)
 	_connect_once(entity_status_max.value_changed, _on_value_max_changed)

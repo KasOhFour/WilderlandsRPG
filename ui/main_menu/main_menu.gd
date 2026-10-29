@@ -19,7 +19,7 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed('toggle_menu'):
+	if event.is_action_pressed("toggle_menu"):
 		dimmer.visible = not visible
 		visible = not visible
 		return
@@ -28,7 +28,7 @@ func _input(event: InputEvent) -> void:
 		var rect = get_global_rect()
 		if not rect.has_point(event.position) and not gcim.item_stack.is_empty():
 			var scene_root := get_tree().current_scene
-			var player: Player = get_tree().get_first_node_in_group('player')
+			var player: Player = get_tree().get_first_node_in_group("player")
 			var item_position := (player.global_position.y - player.magnetic_field.global_position.y) * randf_range(0.90, 1.10)
 			var item_stack_2d := ItemStack2D.instance(
 				gcim.item_stack.copy(),

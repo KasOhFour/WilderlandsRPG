@@ -3,7 +3,7 @@
 class_name EntityStatusModifier
 extends Resource
 
-const DEFAULT_NAME := &''
+const DEFAULT_NAME := &""
 const DEFAULT_MODE := EntityStatusModifier.Mode.UNDEFINED
 const DEFAULT_VALUE := 0.00
 

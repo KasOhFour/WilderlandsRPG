@@ -7,7 +7,7 @@ const DEFAULT_SIZE := 10
 @export var item_stacks: Array[ItemStack]
 
 
-@warning_ignore('shadowed_variable')
+@warning_ignore("shadowed_variable")
 func _init(size := DEFAULT_SIZE) -> void:
 	while item_stacks.size() < size:
 		var item_stack := ItemStack.new()

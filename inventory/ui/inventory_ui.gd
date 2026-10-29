@@ -3,11 +3,11 @@ class_name InventoryUI
 extends GridContainer
 
 const SLOT_SIGNALS := {
-	&'primary_pressed': &'_on_primary_pressed',
-	&'secondary_pressed': &'_on_secondary_pressed',
-	&'double_pressed': &'_on_double_pressed',
-	&'hover_entered': &'_on_hover_entered',
-	&'hover_exited': &'_on_hover_exited',
+	&"primary_pressed": &"_on_primary_pressed",
+	&"secondary_pressed": &"_on_secondary_pressed",
+	&"double_pressed": &"_on_double_pressed",
+	&"hover_entered": &"_on_hover_entered",
+	&"hover_exited": &"_on_hover_exited",
 }
 
 var inventory: Inventory:
@@ -16,7 +16,7 @@ var item_slots: Array[ItemSlot]
 var _tooltip := ItemTooltipPresenter.new()
 
 
-@warning_ignore('shadowed_variable')
+@warning_ignore("shadowed_variable")
 func _init(inventory := Inventory.new()) -> void:
 	self.inventory = inventory
 

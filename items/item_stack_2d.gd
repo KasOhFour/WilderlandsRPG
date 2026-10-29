@@ -2,13 +2,13 @@
 class_name ItemStack2D
 extends CharacterBody2D
 
-const DEFAULT_ITEM_STACK := preload('res://items/item_stack.gd')
+const DEFAULT_ITEM_STACK := preload("res://items/item_stack.gd")
 const DEFAULT_ITEM_POSITION := Vector2(0.00, 0.00)
 const DEFAULT_POSITION := Vector2(0.00, 0.00)
 const DEFAULT_VELOCITY := Vector2(0.00, 0.00)
 const DEFAULT_NO_PICK_UP_DELTA := 0.00
 const DEFAULT_BOUNCE_DAMPING := 0.90
-const SCENE := preload('res://items/item_stack_2d.tscn')
+const SCENE := preload("res://items/item_stack_2d.tscn")
 const ACCELERATION := 9.99
 const DECELERATION := 99.99
 const MAX_SPEED := 999.99

@@ -12,7 +12,7 @@ enum IntegerRounding {
 	CEIL,
 }
 
-const DEFAULT_NAME := &''
+const DEFAULT_NAME := &""
 const DEFAULT_VALUE := 0.00
 const DEFAULT_ROUNDING := IntegerRounding.UNDEFINED
 

@@ -18,7 +18,7 @@ static func set_anchors(region: IslandRegion, island: Island, island_tile: Islan
 	var starting_weight := 1
 	for position in region.positions:
 		for weight in NEIGHBORS:
-			var tile: Island.Tile = island.get_data(position.x, position.y, 'island_map')
+			var tile: Island.Tile = island.get_data(position.x, position.y, "island_map")
 			var has_all_neighbors := tile == island_tile
 			for neighbor in NEIGHBORS[weight]:
 				var d: Vector2i = position + neighbor
@@ -26,7 +26,7 @@ static func set_anchors(region: IslandRegion, island: Island, island_tile: Islan
 					has_all_neighbors = false
 					break
 
-				tile = island.get_data(d.x, d.y, 'island_map')
+				tile = island.get_data(d.x, d.y, "island_map")
 				if d not in region.positions or tile != island_tile:
 					has_all_neighbors = false
 					break

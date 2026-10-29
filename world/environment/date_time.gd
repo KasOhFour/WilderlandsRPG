@@ -49,7 +49,7 @@ var normal_delta := 0.0
 var is_paused := false
 
 
-@warning_ignore('shadowed_variable')
+@warning_ignore("shadowed_variable")
 static func is_save_hour(hour: int) -> bool:
 	if hour == MORNING_START_HOUR - ON_SAVE_SKIP_HOURS:
 		return true
@@ -58,7 +58,7 @@ static func is_save_hour(hour: int) -> bool:
 	return false
 
 
-@warning_ignore('shadowed_variable')
+@warning_ignore("shadowed_variable")
 func _init(
 		year := 1,
 		season := Season.SPRING,
@@ -102,6 +102,28 @@ func get_total_minutes() -> int:
 	)
 
 
+func get_string_time(format: String = "$Se $DD, Year $Y, $HH:$MM $Me") -> String:
+	var result := format
+	var season_name := Util.enum_string(DateTime.Season, season)
+	var standard_hour := Util.standard_hour(hour)
+	var meridiem := "AM" if hour < 12 else "PM"
+
+	result = result.replace("$Y", str(year))
+	result = result.replace("$Se", season_name.capitalize())
+	result = result.replace("$SE", season_name.to_upper())
+	result = result.replace("$SN", str(season))
+	result = result.replace("$DD", "%02d" % day)
+	result = result.replace("$D", str(day))
+	result = result.replace("$HH", "%02d" % standard_hour)
+	result = result.replace("$H", str(standard_hour))
+	result = result.replace("$hh", "%02d" % hour)
+	result = result.replace("$h", str(hour))
+	result = result.replace("$MM", "%02d" % minute)
+	result = result.replace("$Me", meridiem)
+
+	return result
+
+
 func advance_minutes(minutes: int, suppress_signals := false) -> void:
 	var total_minutes := get_total_minutes() + minutes
 	var old_year := year
@@ -110,19 +132,19 @@ func advance_minutes(minutes: int, suppress_signals := false) -> void:
 	var old_hour := hour
 	var old_minute := minute
 
-	@warning_ignore('integer_division')
+	@warning_ignore("integer_division")
 	year = total_minutes / MINUTES_PER_YEAR
 	total_minutes %= MINUTES_PER_YEAR
 
-	@warning_ignore('integer_division', 'int_as_enum_without_cast')
+	@warning_ignore("integer_division", "int_as_enum_without_cast")
 	season = total_minutes / MINUTES_PER_SEASON
 	total_minutes %= MINUTES_PER_SEASON
 
-	@warning_ignore('integer_division')
+	@warning_ignore("integer_division")
 	day = total_minutes / MINUTES_PER_DAY
 	total_minutes %= MINUTES_PER_DAY
 
-	@warning_ignore('integer_division')
+	@warning_ignore("integer_division")
 	hour = total_minutes / MINUTES_PER_HOUR
 	minute = total_minutes % MINUTES_PER_HOUR
 
@@ -157,16 +179,16 @@ func advance_by(
 ) -> void:
 	var minutes := 0
 
-	minutes += date_time.get('year', 0) * MINUTES_PER_YEAR
-	minutes += date_time.get('season', 0) * MINUTES_PER_SEASON
-	minutes += date_time.get('day', 0) * MINUTES_PER_DAY
-	minutes += date_time.get('hour', 0) * MINUTES_PER_HOUR
-	minutes += date_time.get('minute', 0)
+	minutes += date_time.get("year", 0) * MINUTES_PER_YEAR
+	minutes += date_time.get("season", 0) * MINUTES_PER_SEASON
+	minutes += date_time.get("day", 0) * MINUTES_PER_DAY
+	minutes += date_time.get("hour", 0) * MINUTES_PER_HOUR
+	minutes += date_time.get("minute", 0)
 
 	advance_minutes(minutes, suppress_signals)
 
 
-@warning_ignore('shadowed_variable')
+@warning_ignore("shadowed_variable")
 func set_time(
 		year: int,
 		season: Season,
@@ -184,6 +206,6 @@ func set_time(
 
 func skip_hours_from_save() -> void:
 	advance_by(
-		{ 'hour': 2 },
+		{ "hour": 2 },
 		true,
 	)

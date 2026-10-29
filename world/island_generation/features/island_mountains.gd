@@ -3,7 +3,7 @@ extends IslandFeature
 
 
 func apply(island: Island) -> void:
-	if island.get_parameter('mountain_frequency') <= 0.0:
+	if island.get_parameter("mountain_frequency") <= 0.0:
 		return
 
 	var maybe_mountains: Array[IslandRegion] = []
@@ -14,7 +14,7 @@ func apply(island: Island) -> void:
 			var tile := island.get_data(
 				int(position.x),
 				int(position.y),
-				'island_map',
+				"island_map",
 			) as Island.Tile
 			if island.is_tile_water(tile):
 				has_water = true
@@ -22,15 +22,15 @@ func apply(island: Island) -> void:
 			cumulative_depth += island.get_data(
 				int(position.x),
 				int(position.y),
-				'depth_map',
+				"depth_map",
 			)
 		if has_water or cumulative_depth / region.size() < 0.05:
 			continue
 		maybe_mountains.append(region)
-	Random.shuffle(island.input_seed, ['island_mountains', island.position()], maybe_mountains)
+	Random.shuffle(island.input_seed, ["island_mountains", island.position()], maybe_mountains)
 
 	var mountain_cap: int = ceil(
-		island.size() * island.get_parameter('mountain_frequency') * 0.03,
+		island.size() * island.get_parameter("mountain_frequency") * 0.03,
 	)
 	for maybe_mountain: IslandRegion in maybe_mountains:
 		if maybe_mountain.size() > mountain_cap:
