@@ -32,6 +32,10 @@ func equals(other: ItemStack) -> bool:
 	return item.equals(other.item)
 
 
+func can_stack_with(other: ItemStack) -> bool:
+	return is_empty() or other.is_empty() or equals(other)
+
+
 func is_empty() -> bool:
 	return item == null or count <= 0
 

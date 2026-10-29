@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bn4sy16ww2q6n"]
 
-[ext_resource type="PackedScene" uid="uid://fknfq8ya4c0" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://1orbdx3ylu3n" path="res://world.gd" id="1_wse8f"]
 [ext_resource type="Texture2D" uid="uid://bap5ghfaodjy3" path="res://assets/Farm.webp" id="2_2u3nc"]
 [ext_resource type="TileSet" uid="uid://cmtdnvoq4scsb" path="res://assets/ground_tileset.tres" id="2_il2jm"]
@@ -53,9 +52,6 @@ navigation_enabled = false
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1048218526]
 position = Vector2(341.6084, 278.5)
 texture = ExtResource("2_2u3nc")
-
-[node name="Player" parent="." unique_id=641644182 instance=ExtResource("1_f3sb7")]
-position = Vector2(-67, 45)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1136309635]
 
