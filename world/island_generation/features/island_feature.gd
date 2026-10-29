@@ -3,4 +3,4 @@ extends RefCounted
 
 
 func apply(_island: Island) -> void:
-	push_error('IslandFeature.apply() not implemented')
+	push_error("IslandFeature.apply() not implemented")

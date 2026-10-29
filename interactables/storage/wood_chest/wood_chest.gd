@@ -11,9 +11,9 @@ var inventory := Inventory.new(30)
 @onready var animation := $AnimatedSprite2D
 
 
-@warning_ignore('shadowed_variable')
+@warning_ignore("shadowed_variable")
 static func from_tscn(inventory: Inventory) -> WoodChest:
-	const TSCN := preload('res://interactables/storage/wood_chest/wood_chest.tscn')
+	const TSCN := preload("res://interactables/storage/wood_chest/wood_chest.tscn")
 	var wood_chest: WoodChest = TSCN.instantiate()
 	wood_chest.inventory = inventory
 	return wood_chest
@@ -24,7 +24,7 @@ func open() -> Inventory:
 		return null
 
 	is_open = true
-	animation.play('open')
+	animation.play("open")
 	return inventory
 
 
@@ -33,7 +33,7 @@ func close() -> bool:
 		return false
 
 	is_open = false
-	animation.play('close')
+	animation.play("close")
 	return true
 
 

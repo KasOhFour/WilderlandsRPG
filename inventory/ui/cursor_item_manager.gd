@@ -7,7 +7,7 @@ var isui := _isui:
 	set(value):
 		var orphan := _isui
 		_isui = value
-		call_deferred('_reparent', orphan)
+		call_deferred("_reparent", orphan)
 	get:
 		return _isui
 var item_stack: ItemStack:
@@ -16,7 +16,7 @@ var item_stack: ItemStack:
 	get:
 		return isui.item_stack
 var drag := StackDrag.new()
-var _isui: ItemStackUI = preload('res://inventory/ui/item_stack_ui.tscn').instantiate()
+var _isui: ItemStackUI = preload("res://inventory/ui/item_stack_ui.tscn").instantiate()
 
 
 func is_dragging() -> bool:
@@ -65,7 +65,7 @@ func _reparent(orphan: ItemStackUI) -> void:
 			orphan.queue_free()
 		return
 
-	var cursor_layer := get_tree().get_first_node_in_group('cursor_layer')
+	var cursor_layer := get_tree().get_first_node_in_group("cursor_layer")
 	if not cursor_layer:
 		Game.gui.add_child(isui)
 		return

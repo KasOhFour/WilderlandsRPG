@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var water_gradient_material: ShaderMaterial = preload('res://shaders/water_gradient.tres')
-@onready var shadow_material: ShaderMaterial = preload('res://shaders/shadow.tres')
+@onready var water_gradient_material: ShaderMaterial = preload("res://shaders/water_gradient.tres")
+@onready var shadow_material: ShaderMaterial = preload("res://shaders/shadow.tres")
 @onready var terrain_layer := $TerrainLayer
 @onready var shadow_layer := $ShadowLayer
 @onready var detail_layer := $DetailLayer
@@ -11,12 +11,12 @@ extends Node2D
 const TILE_COLORS := {
 	1: Color(0.0, 0.1, 0.4), # OCEAN_DEEP
 	2: Color(0.1, 0.3, 0.7), # OCEAN_COASTAL
-	3: Color('#f0d696'), # COASTLINE
-	4: Color('#ad9d62'), # LAND
-	5: Color('#594a45'), # HILL
+	3: Color("#f0d696"), # COASTLINE
+	4: Color("#ad9d62"), # LAND
+	5: Color("#594a45"), # HILL
 	6: Color(0.1, 0.3, 0.7), # RIVER
 	7: Color(0.0, 0.1, 0.4), # LAKE
-	8: Color('#887c56'), # FOREST
+	8: Color("#887c56"), # FOREST
 }
 # Colors for each biome type
 const BIOME_COLORS := {
@@ -32,7 +32,7 @@ const BIOME_COLORS := {
 @export var island_generator := IslandGenerator.new() # drag your IslandGenerator node into this
 
 var island_map: Array[PackedInt32Array] # will hold the generated result
-var tile_set: TileSet = preload('res://world/map/art/island.tres')
+var tile_set: TileSet = preload("res://world/map/art/island.tres")
 var island := Island.new()
 
 
@@ -132,8 +132,8 @@ func _draw_detail_layer(child: Node2D, island: Island) -> void:
 			while weight > 0:
 				var sprite := Sprite2D.new()
 
-				var size: String = ['16x16', '32x32', '48x48'][weight - 1]
-				sprite.texture = load('res://world/map/art/mountain_%s.png' % size)
+				var size: String = ["16x16", "32x32", "48x48"][weight - 1]
+				sprite.texture = load("res://world/map/art/mountain_%s.png" % size)
 
 				var sprite_size := tile_size * weight
 				var jitter_x := randi_range(-3, 3)

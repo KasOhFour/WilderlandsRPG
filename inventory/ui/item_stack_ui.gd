@@ -1,8 +1,8 @@
 class_name ItemStackUI
 extends Control
 
-const LAYER_PATHS: Array[NodePath] = [^'Shadow', ^'Item']
-const SIDES: Array[String] = ['left', 'top', 'right', 'bottom']
+const LAYER_PATHS: Array[NodePath] = [^"Shadow", ^"Item"]
+const SIDES: Array[String] = ["left", "top", "right", "bottom"]
 
 var item_stack: ItemStack:
 	set = _set_item_stack
@@ -17,9 +17,9 @@ func _ready() -> void:
 		var layer: Node = get_node(path)
 
 		_layers.append({
-			margins = layer.get_node('Margins') as MarginContainer,
-			texture = layer.get_node('Margins/Texture') as TextureRect,
-			count = layer.get_node('Count') as Label,
+			margins = layer.get_node("Margins") as MarginContainer,
+			texture = layer.get_node("Margins/Texture") as TextureRect,
+			count = layer.get_node("Count") as Label,
 		})
 
 	if not item_stack:
@@ -61,4 +61,4 @@ func _update() -> void:
 		layer.count.visible = item_stack.count not in [0, 1]
 
 		for side in SIDES:
-			layer.margins.add_theme_constant_override('margin_%s' % side, item_margins)
+			layer.margins.add_theme_constant_override("margin_%s" % side, item_margins)

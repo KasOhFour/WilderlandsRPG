@@ -2,14 +2,14 @@
 class_name State
 extends RefCounted
 
-var name := &''
+var name := &""
 var enter_cb := func(): return
 var exit_cb := func(): return
 var illegal_from: Array[StringName] = []
 var illegal_to: Array[StringName] = []
 
 
-@warning_ignore('shadowed_variable')
+@warning_ignore("shadowed_variable")
 func _init(
 		name := self.name,
 		enter_cb := self.enter_cb,

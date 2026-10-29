@@ -6,16 +6,16 @@ var color: Color:
 	set(value):
 		_color = value
 
-		var normal_style := get_theme_stylebox('normal')
+		var normal_style := get_theme_stylebox("normal")
 		normal_style.bg_color = _color
 
-		var hover_style := get_theme_stylebox('hover')
+		var hover_style := get_theme_stylebox("hover")
 		hover_style.bg_color = _color + BUTTON_HOVER_COLOR_OFFSET
 
-		var pressed_style := get_theme_stylebox('pressed')
+		var pressed_style := get_theme_stylebox("pressed")
 		pressed_style.bg_color = _color
 
-		var focus_style := get_theme_stylebox('focus')
+		var focus_style := get_theme_stylebox("focus")
 		focus_style.bg_color = _color
 
 var _color: Color
@@ -38,9 +38,9 @@ func _ready() -> void:
 	focus_style.set_border_width_all(2)
 	focus_style.set_corner_radius_all(0)
 
-	add_theme_stylebox_override('normal', normal_style)
-	add_theme_stylebox_override('hover', hover_style)
-	add_theme_stylebox_override('pressed', pressed_style)
-	add_theme_stylebox_override('focus', focus_style)
+	add_theme_stylebox_override("normal", normal_style)
+	add_theme_stylebox_override("hover", hover_style)
+	add_theme_stylebox_override("pressed", pressed_style)
+	add_theme_stylebox_override("focus", focus_style)
 
 	color = Color.BLACK

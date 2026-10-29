@@ -47,7 +47,7 @@ const TILE_WEIGHTS := [
 const X := 100
 const Y := 100
 
-const GRASS_PATCH := preload('res://world/environment/grass_patch_2d.tscn')
+const GRASS_PATCH := preload("res://world/environment/grass_patch_2d.tscn")
 
 
 func _ready() -> void:
@@ -88,15 +88,15 @@ func _ready() -> void:
 
 
 			const TINT_STRENGTH := 0.33
-			var grass_gradient: GradientTexture1D = load('res://world/environment/grass_gradient.tres')
+			var grass_gradient: GradientTexture1D = load("res://world/environment/grass_gradient.tres")
 			if false and noise_value > 0.00 and noise_value <= 0.25:
 				var tint := grass_gradient.gradient.sample(randf())
 				for i in range(0, 8):
 					var grass_patch := GRASS_PATCH.instantiate()
 					var mat: Material = grass_patch.material.duplicate(true)
 					grass_patch.material = mat
-					mat.set_shader_parameter('tint_color', tint)
-					mat.set_shader_parameter('tint_strength', TINT_STRENGTH)
+					mat.set_shader_parameter("tint_color", tint)
+					mat.set_shader_parameter("tint_strength", TINT_STRENGTH)
 					grass_patch.position = Vector2(x * 16 + randf_range(0, 15) + 8, y * 16 + randf_range(0, 15) + 8)
 					$GrassPatches.add_child(grass_patch)
 

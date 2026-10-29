@@ -7,7 +7,7 @@ const PLAYER_IRIS_COLOR_OFFSET := Color(0.15, 0.15, 0.15)
 const PLAYER_SKIN_INDICES := [1, 3, 4, 5]
 const PLAYER_SKIN_THUMBNAIL_INDEX := 2
 
-@export var name := ''
+@export var name := ""
 @export var palette_texture: Texture2D
 
 

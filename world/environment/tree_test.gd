@@ -1,7 +1,7 @@
 class_name Tree2D
 extends Node2D
 
-const DEFAULT_HITPOINTS_GAUGE := preload('res://entities/status/hitpoints.tres')
+const DEFAULT_HITPOINTS_GAUGE := preload("res://entities/status/hitpoints.tres")
 const MAX_JITTER := 0.44
 
 var hitpoints_gauge: EntityStatusGauge
@@ -38,7 +38,7 @@ func take_hit(damage: float, source: Node) -> void:
 
 	var direction := 1.0
 
-	if source and source.get('global_position') != null:
+	if source and source.get("global_position") != null:
 		direction *= sign(global_position.x - source.global_position.x)
 		if not direction:
 			direction = 1.0

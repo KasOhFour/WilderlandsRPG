@@ -2,7 +2,7 @@ class_name PaletteContainer extends VBoxContainer
 
 signal colors_chosen(colors: PackedColorArray)
 
-const dropdown_palette_tscn := preload('res://ui/palette/dropdown_palette.tscn')
+const dropdown_palette_tscn := preload("res://ui/palette/dropdown_palette.tscn")
 
 @export var palettes: Array[Palette]
 

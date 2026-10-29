@@ -6,7 +6,7 @@ func apply(island: Island) -> void:
 	var width := island.width()
 	var height := island.height()
 	var biome_map: Array[PackedInt32Array] = []
-	var biomes := island.get_parameter('biomes') as Array[Island.Biome]
+	var biomes := island.get_parameter("biomes") as Array[Island.Biome]
 	if biomes.is_empty():
 		return
 
@@ -26,7 +26,7 @@ func apply(island: Island) -> void:
 	for maybe_biome: IslandRegion in maybe_biomes:
 		var x := maybe_biome.superposition().x
 		var y := maybe_biome.superposition().y
-		match island.get_parameter('axis'):
+		match island.get_parameter("axis"):
 			Island.Axis.NORTHEASTWARD:
 				if (x / float(width)) + (y / float(height)) > 1.0:
 					for position in maybe_biome.positions:

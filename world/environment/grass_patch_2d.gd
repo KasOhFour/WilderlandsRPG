@@ -1,9 +1,9 @@
 extends Sprite2D
 
 const GRASS_PATCH_TEXTURES := [
-	preload('res://world/environment/grass_patch_small.png'),
-	preload('res://world/environment/grass_patch_medium.png'),
-	preload('res://world/environment/grass_patch_large.png'),
+	preload("res://world/environment/grass_patch_small.png"),
+	preload("res://world/environment/grass_patch_medium.png"),
+	preload("res://world/environment/grass_patch_large.png"),
 ]
 
 func _ready() -> void:

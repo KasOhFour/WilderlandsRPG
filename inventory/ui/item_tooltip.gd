@@ -13,9 +13,9 @@ func _process(_delta) -> void:
 
 
 func display(item: Item, cursor_layer: CanvasLayer) -> void:
-	var color := '#%06x' % item.rarity
+	var color := "#%06x" % item.rarity
 
 	cursor_layer.add_child(self)
 
-	label.text = '[color=%s]%s[/color]' % [color, item.name]
+	label.text = "[color=%s]%s[/color]" % [color, item.name]
 	visible = true

@@ -7,7 +7,7 @@ var states: Dictionary[StringName, State] = {}
 var from := State.new()
 
 
-@warning_ignore('shadowed_variable')
+@warning_ignore("shadowed_variable")
 func _init(states := self.states, from := self.from) -> void:
 	self.states = states
 	self.from = from

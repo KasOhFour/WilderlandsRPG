@@ -49,9 +49,9 @@ const FOREST_FREQUENCY_MAX := 1.00
 const BIOME_FREQUENCY_MIN := 0.00
 const BIOME_FREQUENCY_MAX := 1.00
 
-var elevation_noise: FastNoiseLite = preload('res://world/island_generation/noise/island_elevation_noise.tres')
-var region_noise: FastNoiseLite = preload('res://world/island_generation/noise/island_region_noise.tres')
-var river_noise: FastNoiseLite = preload('res://world/island_generation/noise/island_river_noise.tres')
+var elevation_noise: FastNoiseLite = preload("res://world/island_generation/noise/island_elevation_noise.tres")
+var region_noise: FastNoiseLite = preload("res://world/island_generation/noise/island_region_noise.tres")
+var river_noise: FastNoiseLite = preload("res://world/island_generation/noise/island_river_noise.tres")
 var pass_hills_enabled := true
 var pass_rivers_enabled := true
 var pass_lakes_enabled := true
@@ -80,85 +80,85 @@ var world_seed := _world_seed:
 var width := _width:
 	get:
 		if _width == 0:
-			seed(_derive_seed('width'))
+			seed(_derive_seed("width"))
 			_width = randi_range(MAP_STEPS_MIN, MAP_STEPS_MAX) * TILES_PER_STEP
 		return _width
 var height := _height:
 	get:
 		if _height == 0:
-			seed(_derive_seed('height'))
+			seed(_derive_seed("height"))
 			_height = randi_range(MAP_STEPS_MIN, MAP_STEPS_MAX) * TILES_PER_STEP
 		return _height
 var hill_frequency := _hill_frequency:
 	get:
 		if _hill_frequency < 0.00:
-			seed(_derive_seed('hill_frequency'))
+			seed(_derive_seed("hill_frequency"))
 			_hill_frequency = randf_range(HILL_FREQUENCY_MIN, HILL_FREQUENCY_MAX)
 		return _hill_frequency
 var lake_frequency := _lake_frequency:
 	get:
 		if _lake_frequency < 0.00:
-			seed(_derive_seed('lake_frequency'))
+			seed(_derive_seed("lake_frequency"))
 			_lake_frequency = randf_range(LAKE_FREQUENCY_MIN, LAKE_FREQUENCY_MAX)
 		return _lake_frequency
 var river_frequency := _river_frequency:
 	get:
 		if _river_frequency < 0.00:
-			seed(_derive_seed('river_frequency'))
+			seed(_derive_seed("river_frequency"))
 			_river_frequency = randf_range(RIVER_FREQUENCY_MIN, RIVER_FREQUENCY_MAX)
 		return _river_frequency
 var forest_frequency := _forest_frequency:
 	get:
 		if _forest_frequency < 0.00:
-			seed(_derive_seed('forest_frequency'))
+			seed(_derive_seed("forest_frequency"))
 			_forest_frequency = randf_range(FOREST_FREQUENCY_MIN, FOREST_FREQUENCY_MAX)
 		return _forest_frequency
 var biome_frequency := _biome_frequency:
 	get:
 		if _biome_frequency < 0.00:
-			seed(_derive_seed('biome_frequency'))
+			seed(_derive_seed("biome_frequency"))
 			_biome_frequency = randf_range(BIOME_FREQUENCY_MIN, BIOME_FREQUENCY_MAX)
 		return _biome_frequency
 var hill_distribution := _hill_distribution:
 	get:
 		if _hill_distribution == RegionDistribution.UNDEFINED:
-			seed(_derive_seed('hill_distribution'))
+			seed(_derive_seed("hill_distribution"))
 			_hill_distribution = RegionDistribution.values()[randi() % RegionDistribution.values().size()]
 		return _hill_distribution
 var river_distribution := _river_distribution:
 	get:
 		if _river_distribution == RegionDistribution.UNDEFINED:
-			seed(_derive_seed('river_distribution'))
+			seed(_derive_seed("river_distribution"))
 			_river_distribution = RegionDistribution.values()[randi() % RegionDistribution.values().size()]
 		return _river_distribution
 var lake_distribution := _lake_distribution:
 	get:
 		if _lake_distribution == RegionDistribution.UNDEFINED:
-			seed(_derive_seed('lake_distribution'))
+			seed(_derive_seed("lake_distribution"))
 			_lake_distribution = RegionDistribution.values()[randi() % RegionDistribution.values().size()]
 		return _lake_distribution
 var forest_distribution := _forest_distribution:
 	get:
 		if _forest_distribution == RegionDistribution.UNDEFINED:
-			seed(_derive_seed('forest_distribution'))
+			seed(_derive_seed("forest_distribution"))
 			_forest_distribution = RegionDistribution.values()[randi() % RegionDistribution.values().size()]
 		return _forest_distribution
 var biome_split := _biome_split:
 	get:
 		if _biome_split == BiomeSplit.UNDEFINED:
-			seed(_derive_seed('biome_distribution'))
+			seed(_derive_seed("biome_distribution"))
 			_biome_split = BiomeSplit.values()[clamp(randi() % BiomeSplit.values().size(), 1, BiomeSplit.values().size())]
 		return _biome_split
 var biomes := _biomes:
 	get:
 		if _biomes.is_empty():
 			var biome_types := BiomeType.values().filter(func(biome_type: BiomeType): return biome_type != 0)
-			seed(_derive_seed('biomes'))
+			seed(_derive_seed("biomes"))
 			var biome_type_index := randi() % biome_types.size()
 			_biomes = [biome_types[biome_type_index]]
 			var biome_type_limit: float = max(ceil(biome_frequency * 2), 1)
 			if biome_type_limit > 1:
-				seed(_derive_seed('biome_adjacency_offset'))
+				seed(_derive_seed("biome_adjacency_offset"))
 				var adjacency_offset: int = [-1, 1][randi() % 2]
 				_biomes.append(biome_types[(biome_type_index + adjacency_offset) % biome_types.size()])
 		return _biomes
@@ -202,17 +202,17 @@ func _derive_seed(salt: String) -> int:
 
 
 func _print_info() -> void:
-	print('world seed: ', world_seed)
-	print('hill_frequency: ', hill_frequency)
-	print('lake_frequency: ', lake_frequency)
-	print('river_frequency: ', river_frequency)
-	print('forest_frequency: ', forest_frequency)
-	print('hill_distribution: ', hill_distribution)
-	print('lake_distribution: ', lake_distribution)
-	print('river_distribution: ', river_distribution)
-	print('forest_distribution: ', forest_distribution)
-	print('biomes: ', biomes)
-	print('biome_split: ', biome_split)
+	print("world seed: ", world_seed)
+	print("hill_frequency: ", hill_frequency)
+	print("lake_frequency: ", lake_frequency)
+	print("river_frequency: ", river_frequency)
+	print("forest_frequency: ", forest_frequency)
+	print("hill_distribution: ", hill_distribution)
+	print("lake_distribution: ", lake_distribution)
+	print("river_distribution: ", river_distribution)
+	print("forest_distribution: ", forest_distribution)
+	print("biomes: ", biomes)
+	print("biome_split: ", biome_split)
 
 
 func _generate_island() -> Array[PackedInt32Array]:
@@ -523,7 +523,7 @@ func _pass_cardinals() -> void:
 			if has_cardinal:
 				continue
 
-			_derive_seed('cardinals' + str(x) + str(y))
+			_derive_seed("cardinals" + str(x) + str(y))
 			var bridge_direction: Vector2i = Directions.CARDINAL[randi() % Directions.CARDINAL.size()]
 			var tile_info: Vector3i = Vector3i(bridge_direction.x, bridge_direction.y, tile_type)
 
