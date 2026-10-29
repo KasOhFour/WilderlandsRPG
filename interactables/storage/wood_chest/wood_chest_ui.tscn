@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://terejyk0jbtc"]
 
 [ext_resource type="Script" uid="uid://bmacy721rcfev" path="res://interactables/storage/wood_chest/wood_chest_ui.gd" id="1_seyu5"]
-[ext_resource type="StyleBox" uid="uid://jes4stiuk0m3" path="res://basic_panel.tres" id="1_wxsdw"]
-[ext_resource type="Script" uid="uid://dr8hukg326avf" path="res://inventory_ui.gd" id="3_gshhm"]
-[ext_resource type="PackedScene" uid="uid://ce81avqmurkur" path="res://item_slot.tscn" id="4_ye5ew"]
+[ext_resource type="StyleBox" uid="uid://jes4stiuk0m3" path="res://ui/themes/basic_panel.tres" id="1_wxsdw"]
+[ext_resource type="Script" uid="uid://dr8hukg326avf" path="res://inventory/ui/inventory_ui.gd" id="3_gshhm"]
+[ext_resource type="PackedScene" uid="uid://ce81avqmurkur" path="res://inventory/ui/item_slot.tscn" id="4_ye5ew"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8t0bm"]
 

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cfsewc4go45xo"]
+
+[ext_resource type="PackedScene" uid="uid://ce81avqmurkur" path="res://inventory/ui/item_slot.tscn" id="1_item_slot"]
+[ext_resource type="Texture2D" uid="uid://bn6fady56j7nm" path="res://ui/art/display_flat.png" id="2_display"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_add"]
+blend_mode = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_display"]
+texture = ExtResource("2_display")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[node name="InventorySlot0" unique_id=1032030837 instance=ExtResource("1_item_slot")]
+custom_minimum_size = Vector2(14, 14)
+
+[node name="Panel" parent="." index="0" unique_id=1273165201]
+material = SubResource("CanvasItemMaterial_add")
+custom_minimum_size = Vector2(14, 14)
+theme_override_styles/panel = SubResource("StyleBoxTexture_display")

@@ -19,7 +19,7 @@ static func from_tscn(wood_chest: WoodChest) -> WoodChestUI:
 
 func _ready() -> void:
 	if wood_chest.is_visible_in_tree():
-		const ITEM := preload('res://gold_coin.tres')
+		const ITEM := preload('res://items/gold_coin.tres')
 		const COUNT := 99
 		wood_chest.inventory.fill_inventory(ITEM, COUNT)
 		wci_ui.inventory = wood_chest.inventory

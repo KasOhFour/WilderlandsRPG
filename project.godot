@@ -19,7 +19,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
 
-GlobalCursorItemManager="*res://cursor_item_manager.gd"
+GlobalCursorItemManager="*res://inventory/ui/cursor_item_manager.gd"
 Game="*uid://cbrtk8ndwv7if"
 
 [display]
