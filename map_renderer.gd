@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var water_gradient_material: ShaderMaterial = preload('res://assets/shaders/water_gradient.tres')
-@onready var shadow_material: ShaderMaterial = preload('res://assets/shaders/shadow.tres')
+@onready var water_gradient_material: ShaderMaterial = preload('res://assets/materials/water_gradient.tres')
+@onready var shadow_material: ShaderMaterial = preload('res://assets/materials/shadow.tres')
 @onready var terrain_layer := $TerrainLayer
 @onready var shadow_layer := $ShadowLayer
 @onready var detail_layer := $DetailLayer

@@ -17,3 +17,5 @@ mono_crash.*.json
 
 # Add-ons
 addons/
+# Godot editor temp files
+*.tmp

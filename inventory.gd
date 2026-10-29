@@ -49,13 +49,14 @@ func find_all(item: Item) -> Array[ItemStack]:
 
 
 func get_stack_at(index: int) -> ItemStack:
-	return null if index >= size() else item_stacks[index]
+	return null if index < 0 or index >= size() else item_stacks[index]
 
 
 func set_stack_at(index: int, item_stack: ItemStack) -> void:
-	if index >= size() or not item_stack:
+	if index < 0 or index >= size() or not item_stack:
 		return
 	item_stacks[index] = item_stack
+	emit_changed()
 
 
 func has(item: Item) -> bool:
@@ -104,6 +105,7 @@ func resize(to_size: int) -> Array[ItemStack]:
 	if to_size < size():
 		ejected_item_stacks = item_stacks.slice(to_size, size())
 	item_stacks.resize(to_size)
+	emit_changed()
 	return ejected_item_stacks
 
 
