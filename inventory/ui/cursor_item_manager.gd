@@ -7,7 +7,7 @@ var isui := _isui:
 	set(value):
 		var orphan := _isui
 		_isui = value
-		call_deferred("_reparent", orphan)
+		_reparent.call_deferred(orphan)
 	get:
 		return _isui
 var item_stack: ItemStack:

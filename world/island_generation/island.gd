@@ -55,7 +55,7 @@ const RAINFALL_WEIGHTS := {
 }
 
 var input_seed := 0
-var noise := load("res://world/island_generation/noise.tres")
+var noise := preload("res://world/island_generation/noise.tres")
 var _parameters := Parameters.new()
 var _overrides := Parameters.new()
 var _force_generation := true
@@ -299,7 +299,6 @@ func _resolve_parameters() -> void:
 				MAX_STEPS,
 			) * TILES_PER_STEP
 		)
-		print(dimension, ": ", _parameters[dimension])
 
 	_parameters.falloff_curve = (
 		_overrides.falloff_curve

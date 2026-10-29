@@ -8,7 +8,7 @@ signal opened()
 var is_open := false
 var inventory := Inventory.new(30)
 
-@onready var animation := $AnimatedSprite2D
+@onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 
 
 @warning_ignore("shadowed_variable")

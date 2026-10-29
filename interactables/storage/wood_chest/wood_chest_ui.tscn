@@ -65,99 +65,100 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="InventoryUI" type="GridContainer" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer" unique_id=1585532442]
+[node name="WoodChestGrid" type="GridContainer" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer" unique_id=1585532442]
+unique_name_in_owner = true
 layout_mode = 2
 columns = 10
 script = ExtResource("3_gshhm")
 
-[node name="ItemSlot0" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1382976257 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot0" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=1382976257 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot1" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=2050427512 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot1" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=2050427512 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot2" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1956185761 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot2" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=1956185761 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot3" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=2096207002 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot3" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=2096207002 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot4" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1194730340 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot4" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=1194730340 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot5" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1009930803 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot5" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=1009930803 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot6" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=213655434 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot6" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=213655434 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot7" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1733652772 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot7" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=1733652772 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot8" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=222327752 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot8" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=222327752 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot9" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=594300883 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot9" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=594300883 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot10" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=2007076372 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot10" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=2007076372 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot11" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=247882414 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot11" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=247882414 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot12" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1220330402 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot12" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=1220330402 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot13" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1737378235 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot13" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=1737378235 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot14" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1341461091 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot14" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=1341461091 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot15" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=944524508 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot15" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=944524508 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot16" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=988792265 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot16" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=988792265 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot17" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=2005741066 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot17" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=2005741066 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot18" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=954618013 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot18" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=954618013 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot19" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1057475350 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot19" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=1057475350 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot20" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=885633305 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot20" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=885633305 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot21" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1764392023 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot21" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=1764392023 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot22" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1412655556 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot22" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=1412655556 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot23" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1724770286 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot23" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=1724770286 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot24" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=428389370 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot24" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=428389370 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot25" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=69349096 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot25" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=69349096 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot26" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=741884125 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot26" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=741884125 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot27" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1692450683 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot27" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=1692450683 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot28" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1865104173 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot28" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=1865104173 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot29" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1274763559 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot29" parent="VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/WoodChestGrid" unique_id=1274763559 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
 [node name="PlayerInventory" type="PanelContainer" parent="VBoxContainer" unique_id=39804752]
@@ -193,97 +194,98 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="InventoryUI" type="GridContainer" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer" unique_id=1440971322]
+[node name="PlayerGrid" type="GridContainer" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer" unique_id=1440971322]
+unique_name_in_owner = true
 layout_mode = 2
 columns = 10
 script = ExtResource("3_gshhm")
 
-[node name="ItemSlot0" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=728285542 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot0" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=728285542 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot1" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1824804201 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot1" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=1824804201 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot2" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=962080417 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot2" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=962080417 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot3" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1166566668 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot3" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=1166566668 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot4" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=463145355 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot4" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=463145355 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot5" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=25862807 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot5" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=25862807 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot6" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1908745453 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot6" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=1908745453 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot7" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=652750598 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot7" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=652750598 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot8" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=396051763 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot8" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=396051763 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot9" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1849637884 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot9" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=1849637884 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot10" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1351711646 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot10" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=1351711646 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot11" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=296246874 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot11" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=296246874 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot12" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=536512 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot12" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=536512 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot13" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=2043116818 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot13" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=2043116818 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot14" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=455115501 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot14" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=455115501 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot15" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=536881585 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot15" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=536881585 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot16" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=821585833 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot16" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=821585833 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot17" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=281708242 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot17" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=281708242 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot18" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1066700345 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot18" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=1066700345 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot19" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=203700384 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot19" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=203700384 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot20" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=212367338 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot20" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=212367338 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot21" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1701074730 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot21" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=1701074730 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot22" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=726767266 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot22" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=726767266 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot23" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=67422022 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot23" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=67422022 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot24" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=115039560 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot24" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=115039560 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot25" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=852064156 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot25" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=852064156 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot26" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=808101325 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot26" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=808101325 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot27" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1584778664 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot27" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=1584778664 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot28" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=227496759 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot28" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=227496759 instance=ExtResource("4_ye5ew")]
 layout_mode = 2
 
-[node name="ItemSlot29" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI" unique_id=1006913103 instance=ExtResource("4_ye5ew")]
+[node name="ItemSlot29" parent="VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/PlayerGrid" unique_id=1006913103 instance=ExtResource("4_ye5ew")]
 layout_mode = 2

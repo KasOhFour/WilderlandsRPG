@@ -1,7 +1,7 @@
 class_name ItemTooltip
 extends Control
 
-@onready var label := $RichTextLabel
+@onready var label: RichTextLabel = $RichTextLabel
 
 
 func _ready() -> void:

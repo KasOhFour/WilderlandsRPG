@@ -88,7 +88,7 @@ func _ready() -> void:
 
 
 			const TINT_STRENGTH := 0.33
-			var grass_gradient: GradientTexture1D = load("res://world/environment/grass_gradient.tres")
+			var grass_gradient: GradientTexture1D = preload("res://world/environment/grass_gradient.tres")
 			if false and noise_value > 0.00 and noise_value <= 0.25:
 				var tint := grass_gradient.gradient.sample(randf())
 				for i in range(0, 8):

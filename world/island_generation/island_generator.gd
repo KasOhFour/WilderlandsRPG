@@ -201,20 +201,6 @@ func _derive_seed(salt: String) -> int:
 	return [world_seed, salt].hash()
 
 
-func _print_info() -> void:
-	print("world seed: ", world_seed)
-	print("hill_frequency: ", hill_frequency)
-	print("lake_frequency: ", lake_frequency)
-	print("river_frequency: ", river_frequency)
-	print("forest_frequency: ", forest_frequency)
-	print("hill_distribution: ", hill_distribution)
-	print("lake_distribution: ", lake_distribution)
-	print("river_distribution: ", river_distribution)
-	print("forest_distribution: ", forest_distribution)
-	print("biomes: ", biomes)
-	print("biome_split: ", biome_split)
-
-
 func _generate_island() -> Array[PackedInt32Array]:
 	var tile_map: Array[PackedInt32Array]
 	for y in height:
@@ -244,7 +230,6 @@ func _generate_island() -> Array[PackedInt32Array]:
 	_pass_forests()
 	_pass_biomes()
 	_pass_cardinals()
-	# _print_info()
 
 	return _tile_map
 

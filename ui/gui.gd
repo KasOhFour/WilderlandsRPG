@@ -2,7 +2,7 @@
 class_name GUI
 extends CanvasLayer
 
-@onready var cursor := $Cursor
+@onready var cursor: Control = $Cursor
 
 var map := {
 	WoodChest: WoodChestUI,
@@ -19,15 +19,15 @@ func _process(_delta: float) -> void:
 
 
 
-func open_ui(node: Node) -> void:
+func open_ui(node: Node, player_inventory: Inventory) -> void:
 	if lock:
 		return
 
-	var maybe_ui: GDScript = map[node.get_script()]
+	var maybe_ui: GDScript = map.get(node.get_script())
 	if not maybe_ui:
 		return
 
-	var ui = maybe_ui.from_tscn(node)
+	var ui = maybe_ui.from_tscn(node, player_inventory)
 
 	ui_lock(ui)
 	add_child(ui)
