@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dy2ko54m0ioay"]
+
+[ext_resource type="Texture2D" uid="uid://h4jh0hy6srsy" path="res://_scratch/farm_layout.jpg" id="1_qo4iv"]
+[ext_resource type="PackedScene" uid="uid://bk06o62gyogxe" path="res://ui/main_menu/main_menu.tscn" id="2_sth5e"]
+[ext_resource type="PackedScene" uid="uid://btc0rvbtenj5h" path="res://ui/cursor/cursor_layer.tscn" id="31_dlbge"]
+
+[node name="Control" type="Control" unique_id=298501364]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=458644660]
+z_index = -2
+layout_mode = 0
+offset_right = 803.0
+offset_bottom = 655.0
+texture = ExtResource("1_qo4iv")
+
+[node name="MainMenu" parent="." unique_id=1797284859 instance=ExtResource("2_sth5e")]
+layout_mode = 0
+anchors_preset = 0
+
+[node name="CursorLayer" parent="." unique_id=408571679 instance=ExtResource("31_dlbge")]

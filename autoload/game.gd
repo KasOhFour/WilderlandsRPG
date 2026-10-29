@@ -4,8 +4,8 @@ extends Node
 var date_time := DateTime.new()
 var gui: GUI
 var player: Player
-#var gui := preload('res://gui.tscn').instantiate()
-#var player := preload('res://player.tscn').instantiate()
+#var gui := preload('res://ui/gui.tscn').instantiate()
+#var player := preload('res://entities/player/player.tscn').instantiate()
 
 
 func get_string_time(format: String = '$Se $DD, Year $Y, $HH:$MM $Me') -> String:
@@ -47,8 +47,8 @@ func add_or_parent_player(parent: Node2D) -> void:
 
 
 func _ready() -> void:
-	gui = load("res://gui.tscn").instantiate()
-	player = load("res://player.tscn").instantiate()
+	gui = load("res://ui/gui.tscn").instantiate()
+	player = load("res://entities/player/player.tscn").instantiate()
 	add_child(gui)
 	date_time.minute_ticked.connect(_on_minute_ticked)
 	date_time.hour_ticked.connect(_on_hour_ticked)
