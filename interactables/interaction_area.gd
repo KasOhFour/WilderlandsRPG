@@ -10,7 +10,7 @@ const PROJECTIONS := {
 	&"none": Vector4(0.0, 16.0, 24.0, 24.0),
 }
 
-@onready var projection := $Projection
+@onready var projection: CollisionShape2D = $Projection
 
 
 func project(towards: StringName) -> void:

@@ -10,7 +10,7 @@ var focus: Node2D
 var bounds: Rect2
 
 
-func _ready():
+func _ready() -> void:
 	make_current()
 
 
@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 	refocus()
 
 
-func _input(event):
+func _input(event: InputEvent) -> void:
 	# Zoom
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:

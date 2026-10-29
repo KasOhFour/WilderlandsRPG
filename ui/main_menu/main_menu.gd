@@ -1,8 +1,9 @@
 class_name MainMenu extends NinePatchRect
 
-@onready var dimmer := $ColorRect
-@onready var player_sheet := $PlayerSheet
-@onready var main_menu_tab_group := $MainMenuTabGroup
+@onready var dimmer: ColorRect = $ColorRect
+@onready var player_sheet: Control = $PlayerSheet
+@onready var main_menu_tab_group: HBoxContainer = $MainMenuTabGroup
+@onready var inventory_ui: InventoryUI = %InventoryUI
 
 @onready var tab_to_menu_map: Dictionary = {
 	main_menu_tab_group.get_child(0): player_sheet,
@@ -18,6 +19,10 @@ func _ready() -> void:
 	visible = false
 
 
+func set_inventory(inventory: Inventory) -> void:
+	inventory_ui.inventory = inventory
+
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_menu"):
 		dimmer.visible = not visible
@@ -25,7 +30,7 @@ func _input(event: InputEvent) -> void:
 		return
 	if event is InputEventMouseButton and event.pressed:
 		var gcim := GlobalCursorItemManager
-		var rect = get_global_rect()
+		var rect := get_global_rect()
 		if not rect.has_point(event.position) and not gcim.item_stack.is_empty():
 			var scene_root := get_tree().current_scene
 			var player: Player = get_tree().get_first_node_in_group("player")

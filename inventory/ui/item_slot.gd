@@ -38,7 +38,6 @@ var _tween: Tween
 
 
 func _ready() -> void:
-	GlobalCursorItemManager.drag_ended.connect(_on_drag_ended)
 	panel.self_modulate.a = HIGHLIGHT_ALPHA if is_highlighted else NORMAL_ALPHA
 	if _pending_item_stack:
 		isui.item_stack = _pending_item_stack
@@ -70,10 +69,6 @@ func _gui_input(event: InputEvent) -> void:
 				primary_pressed.emit(event.shift_pressed)
 		MOUSE_BUTTON_RIGHT:
 			secondary_pressed.emit(event.shift_pressed)
-
-
-func _on_drag_ended() -> void:
-	is_highlighted = false
 
 
 func _on_mouse_entered() -> void:

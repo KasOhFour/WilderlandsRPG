@@ -546,6 +546,7 @@ offset_right = 248.0
 offset_bottom = 160.0
 
 [node name="InventoryUI" type="GridContainer" parent="PlayerSheet/InventorySlotDisplay" unique_id=648714805]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

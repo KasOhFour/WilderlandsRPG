@@ -2,6 +2,8 @@
 class_name Player
 extends CharacterBody2D
 
+signal interacted(interactable: Area2D)
+
 const DEFAULT_PALETTE := preload("res://entities/player/default_palette.png")
 const DEFAULT_INVENTORY_SIZE := 40
 const PLAYER_MASK := preload("res://entities/player/default_mask.tres")
@@ -26,7 +28,7 @@ var speed: float
 @onready var shadow: AnimatedSprite2D = $Shadow
 @onready var collision: CollisionShape2D = $Collision
 @onready var magnetic_field: MagneticField = $MagneticField
-@onready var interaction_area := $InteractionArea
+@onready var interaction_area: InteractionArea = $InteractionArea
 
 
 @warning_ignore("shadowed_variable")
@@ -64,7 +66,7 @@ func _process(_delta) -> void:
 func _physics_process(_delta: float) -> void:
 	var x := Input.get_axis("move_w", "move_e")
 	var y := Input.get_axis("move_n", "move_s")
-	var to = 0
+	var to: float = 0.0
 	if x or y:
 		is_idle = false
 		to = MAXIMUM_SPEED
@@ -90,11 +92,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		var interactables: Array[Area2D] = interaction_area.get_interactables()
 		for interactable: Area2D in interactables:
-			if interactable is WoodChest:
-				var wood_chest: WoodChest = interactable
-				Game.gui.open_ui(wood_chest)
-				#interactable.open()
-				
+			interacted.emit(interactable)
 
 
 func update_mask(animation: String, frame: int) -> void:

@@ -2,10 +2,10 @@ extends Node2D
 
 @onready var water_gradient_material: ShaderMaterial = preload("res://shaders/water_gradient.tres")
 @onready var shadow_material: ShaderMaterial = preload("res://shaders/shadow.tres")
-@onready var terrain_layer := $TerrainLayer
-@onready var shadow_layer := $ShadowLayer
-@onready var detail_layer := $DetailLayer
-@onready var water_layer := $WaterLayer
+@onready var terrain_layer: TileMapLayer = $TerrainLayer
+@onready var shadow_layer: TileMapLayer = $ShadowLayer
+@onready var detail_layer: TileMapLayer = $DetailLayer
+@onready var water_layer: TileMapLayer = $WaterLayer
 
 # Colors for each tile type
 const TILE_COLORS := {
@@ -36,10 +36,10 @@ var tile_set: TileSet = preload("res://world/map/art/island.tres")
 var island := Island.new()
 
 
-func _ready():
+func _ready() -> void:
 	# Generate the map once the node is ready
 	island.set_input_seed(randi())
-	print(island.input_seed)
+	print("island seed: ", island.input_seed)
 	island_map = island_generator._generate_island()
 	_scale_to_fit()
 	#terrain_layer.draw_func = Callable(self, '_draw_terrain_layer')
@@ -208,7 +208,7 @@ func _draw_detail_layer(child: Node2D, island: Island) -> void:
 			)
 
 
-func _draw():
+func _draw() -> void:
 	pass
 	#var width := island.width()
 	#var height := island.height()
@@ -389,7 +389,7 @@ func _draw():
 		#)
 
 
-func _scale_to_fit():
+func _scale_to_fit() -> void:
 	return
 	if island.size() < 1:
 		return

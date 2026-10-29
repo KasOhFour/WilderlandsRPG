@@ -56,6 +56,7 @@ texture = ExtResource("2_2u3nc")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1136309635]
 
 [node name="PlayerPaletteMenu" type="VBoxContainer" parent="CanvasLayer" unique_id=624105213]
+unique_name_in_owner = true
 visible = false
 offset_right = 160.0
 offset_bottom = 116.0
@@ -111,6 +112,7 @@ script = ExtResource("3_aqk2v")
 palettes = Array[ExtResource("4_wse8f")]([ExtResource("5_ic0uy"), ExtResource("6_k3n1d"), ExtResource("7_2o6r5"), ExtResource("8_70uel"), ExtResource("9_hiqwa")])
 
 [node name="MainMenu" parent="CanvasLayer" unique_id=1797284859 instance=ExtResource("13_udxuc")]
+unique_name_in_owner = true
 
 [node name="CursorLayer" parent="CanvasLayer" unique_id=877582386 instance=ExtResource("14_ikiii")]
 

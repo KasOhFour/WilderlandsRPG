@@ -6,6 +6,6 @@ extends Resource
 @export var atlas_coords: Vector2i
 
 
-func _init(_id: int, _atlas_coords: Vector2i):
+func _init(_id: int, _atlas_coords: Vector2i) -> void:
 	id = _id
 	atlas_coords = _atlas_coords

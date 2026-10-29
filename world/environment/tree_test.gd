@@ -11,9 +11,9 @@ var lean := 1.0
 var threshold_delta := 1.0
 var cumulative_delta := 0.0
 
-@onready var treetop := $Treetop
-@onready var treetop_sprite_2d := $Treetop/Sprite2D
-@onready var treetop_sway_physics_2d := $Treetop/SwayPhysics2D
+@onready var treetop: Node2D = $Treetop
+@onready var treetop_sprite_2d: Sprite2D = $Treetop/Sprite2D
+@onready var treetop_sway_physics_2d: SwayPhysics2D = $Treetop/SwayPhysics2D
 
 
 func _ready() -> void:

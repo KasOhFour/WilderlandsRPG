@@ -2,28 +2,27 @@
 class_name WoodChestUI
 extends Control
 
-@onready var wci_ui := $VBoxContainer/WoodChestInventory/VBoxContainer/MarginContainer/InventoryUI
-@onready var pi_ui := $VBoxContainer/PlayerInventory/VBoxContainer/MarginContainer/InventoryUI
-
 var wood_chest := WoodChest.new()
+var player_inventory: Inventory
+
+@onready var wood_chest_inventory_ui: InventoryUI = %WoodChestGrid
+@onready var player_inventory_ui: InventoryUI = %PlayerGrid
 
 
 @warning_ignore("shadowed_variable")
-static func from_tscn(wood_chest: WoodChest) -> WoodChestUI:
+static func from_tscn(wood_chest: WoodChest, player_inventory: Inventory) -> WoodChestUI:
 	const TSCN := preload("res://interactables/storage/wood_chest/wood_chest_ui.tscn")
 	var ui: WoodChestUI = TSCN.instantiate()
 	ui.visible = false
 	ui.wood_chest = wood_chest
+	ui.player_inventory = player_inventory
 	return ui
 
 
 func _ready() -> void:
 	if wood_chest.is_visible_in_tree():
-		const ITEM := preload("res://items/gold_coin.tres")
-		const COUNT := 99
-		wood_chest.inventory.fill_inventory(ITEM, COUNT)
-		wci_ui.inventory = wood_chest.inventory
-		pi_ui.inventory = Game.player.inventory
+		wood_chest_inventory_ui.inventory = wood_chest.inventory
+		player_inventory_ui.inventory = player_inventory
 		wood_chest.opened.connect(func(): visible = true)
 		wood_chest.open()
 

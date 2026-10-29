@@ -2,17 +2,10 @@
 class_name InventoryUI
 extends GridContainer
 
-const SLOT_SIGNALS := {
-	&"primary_pressed": &"_on_primary_pressed",
-	&"secondary_pressed": &"_on_secondary_pressed",
-	&"double_pressed": &"_on_double_pressed",
-	&"hover_entered": &"_on_hover_entered",
-	&"hover_exited": &"_on_hover_exited",
-}
-
 var inventory: Inventory:
 	set = _set_inventory
 var item_slots: Array[ItemSlot]
+var cursor: CursorItemManager = GlobalCursorItemManager
 var _tooltip := ItemTooltipPresenter.new()
 
 
@@ -22,11 +15,17 @@ func _init(inventory := Inventory.new()) -> void:
 
 
 func _ready() -> void:
+	cursor.drag_ended.connect(_on_drag_ended)
 	_bind_slots()
 
 
 func _exit_tree() -> void:
 	_tooltip.dismiss()
+
+
+func _on_drag_ended() -> void:
+	for item_slot: ItemSlot in item_slots:
+		item_slot.is_highlighted = false
 
 
 func _set_inventory(value: Inventory) -> void:
@@ -61,17 +60,30 @@ func _bind_slots() -> void:
 		item_slots[i].item_stack = ItemStack.new()
 
 
+func _slot_handlers(item_slot: ItemSlot) -> Array[Array]:
+	return [
+		[item_slot.primary_pressed, _on_primary_pressed.bind(item_slot)],
+		[item_slot.secondary_pressed, _on_secondary_pressed.bind(item_slot)],
+		[item_slot.double_pressed, _on_double_pressed.bind(item_slot)],
+		[item_slot.hover_entered, _on_hover_entered.bind(item_slot)],
+		[item_slot.hover_exited, _on_hover_exited.bind(item_slot)],
+	]
+
+
 func _connect_slot(item_slot: ItemSlot) -> void:
-	for slot_signal: StringName in SLOT_SIGNALS:
-		var handler := Callable(self, SLOT_SIGNALS[slot_signal]).bind(item_slot)
-		item_slot.connect(slot_signal, handler)
+	for pair in _slot_handlers(item_slot):
+		var slot_signal: Signal = pair[0]
+		var handler: Callable = pair[1]
+		if not slot_signal.is_connected(handler):
+			slot_signal.connect(handler)
 
 
 func _disconnect_slot(item_slot: ItemSlot) -> void:
-	for slot_signal: StringName in SLOT_SIGNALS:
-		for connection in item_slot.get_signal_connection_list(slot_signal):
-			if connection.callable.get_object() == self:
-				item_slot.disconnect(slot_signal, connection.callable)
+	for pair in _slot_handlers(item_slot):
+		var slot_signal: Signal = pair[0]
+		var handler: Callable = pair[1]
+		if slot_signal.is_connected(handler):
+			slot_signal.disconnect(handler)
 
 
 func _stack_of(item_slot: ItemSlot) -> ItemStack:
@@ -79,40 +91,38 @@ func _stack_of(item_slot: ItemSlot) -> ItemStack:
 
 
 func _on_primary_pressed(shift: bool, item_slot: ItemSlot) -> void:
-	var gcim := GlobalCursorItemManager
 	var stack := _stack_of(item_slot)
 
 	_tooltip.dismiss()
-	if InventoryInteraction.primary_click(gcim.item_stack, stack, shift):
-		gcim.drag.arm(stack)
+	if InventoryInteraction.primary_click(cursor.item_stack, stack, shift):
+		cursor.drag.arm(stack)
 	else:
-		gcim.drag.arm(null)
+		cursor.drag.arm(null)
 
 
 func _on_secondary_pressed(shift: bool, item_slot: ItemSlot) -> void:
 	InventoryInteraction.secondary_click(
-		GlobalCursorItemManager.item_stack, _stack_of(item_slot), shift
+		cursor.item_stack, _stack_of(item_slot), shift
 	)
 
 
 func _on_double_pressed(item_slot: ItemSlot) -> void:
 	InventoryInteraction.double_click(
-		inventory, GlobalCursorItemManager.item_stack, _stack_of(item_slot)
+		inventory, cursor.item_stack, _stack_of(item_slot)
 	)
 
 
 func _on_hover_entered(item_slot: ItemSlot) -> void:
-	var gcim := GlobalCursorItemManager
 	var stack := _stack_of(item_slot)
 
-	if gcim.is_dragging():
-		gcim.drag_over(stack)
+	if cursor.is_dragging():
+		cursor.drag_over(stack)
 	else:
 		_tooltip.show_for(stack, self)
 
 
 func _on_hover_exited(item_slot: ItemSlot) -> void:
-	var drag := GlobalCursorItemManager.drag
+	var drag := cursor.drag
 	var stack := _stack_of(item_slot)
 
 	_tooltip.dismiss()

@@ -6,4 +6,4 @@ extends CanvasModulate
 
 func _process(_delta: float) -> void:
 	if day_night_texture:
-		color = day_night_texture.gradient.sample(Game.get_normal_time())
+		color = day_night_texture.gradient.sample(Game.date_time.normal_delta)
